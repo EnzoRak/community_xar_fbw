@@ -11,4 +11,6 @@ function p.__main()
     add_bent_s(13,13,7, "bent_base_waypoint", "Community Xar debug room! :D")
     add_bent(13,13,9, "bent_base_ring_blue")
     add_bent_s(13,13,11, "bent_base_txt", "This blue ring will take you to Mylantis!")
+
+    set_pos(2,2,2, "galaxy_blackhole")
 end
