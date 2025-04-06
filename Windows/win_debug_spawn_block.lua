@@ -8,12 +8,11 @@ function p.__render(wid)
     ga_win_set_background_default(wid)
 
     ga_win_set_char_size(wid, 0.02, 0.04)
-    ga_win_txt_center(wid, 0.06, "Go Back (ESC or F)")
+    ga_win_txt_center(wid, 0.06, "Go Back (ESC only)")
 end
 
 function p.__process_input(wid)
     if( ga_win_key_pressed(wid, "ESC") or
-        ga_win_key_pressed(wid, "F") or
         ga_win_mouse_pressed(wid, true) )
     then
         ga_play_sound("menu_back")
