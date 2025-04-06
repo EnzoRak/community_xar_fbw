@@ -1,1 +1,2 @@
 XAR_ROOT block_new_root
+XAR_SPACE_GALAXY block_new_galaxy

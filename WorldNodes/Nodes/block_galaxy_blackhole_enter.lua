@@ -6,4 +6,6 @@ function p.__main()
     create_rect("XAR_SOLID_BORING", 6,6,0, 9,9,15)
     create_rect("XAR_EMPTY_BORING", 7,7,0, 8,8,15)
     create_rect("XAR_ONE_WAY_Z_NEG", 7,7,15, 8,8,15)
+    create_rect("XAR_STOPPER", 7,7,0, 8,8,0)
+    add_bent(7,7,1, "bent_base_ring_green")
 end
