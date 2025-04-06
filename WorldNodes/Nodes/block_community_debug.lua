@@ -17,6 +17,8 @@ function p.__main()
     add_bent(13,13,3, "bent_base_save")
     add_bent(13,11,11, "bent_sleep_hour")
 
+    add_bent(1,14,13, "bent_debug_spawn_block")
+
     -- Put your new blocks here!
     set_pos(2,2,2, "community_debug")
     set_pos(2,2,4, "galaxy_blackhole")
