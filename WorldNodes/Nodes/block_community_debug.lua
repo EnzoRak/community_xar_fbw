@@ -12,5 +12,7 @@ function p.__main()
     add_bent(13,13,9, "bent_base_ring_blue")
     add_bent_s(13,13,11, "bent_base_txt", "This blue ring will take you to Mylantis!")
 
+    add_bent(1,14,13, "bent_debug_spawn_block")
+
     set_pos(2,2,2, "galaxy_blackhole")
 end
