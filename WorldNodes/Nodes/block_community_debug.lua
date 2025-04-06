@@ -3,7 +3,9 @@ function p.__get_tex() return "block_default" end
 
 function p.__main()
     set_default_block("XAR_SOLID_BORING")
-    create_rect("grp_air", 1,1,1, 14,14,14)
+    create_rect("grp_air", 0,1,1, 15,14,14)
+    create_rect("grp_air", 1,0,1, 14,15,14)
+    create_rect("grp_air", 1,1,0, 14,14,15)
     set_pos(14,14,14, "XAR_SOLID_BORING_EXPANDER")
     set_pos(13,14,14, "simple_grow")
     set_pos(14,13,14, "simple_grow")
@@ -16,6 +18,7 @@ function p.__main()
     add_bent(13,11,11, "bent_sleep_hour")
 
     -- Put your new blocks here!
-    set_pos(2,2,2, "galaxy_blackhole")
-    set_pos(2,2,4, "gl_cube")
+    set_pos(2,2,2, "community_debug")
+    set_pos(2,2,4, "galaxy_blackhole")
+    set_pos(2,2,6, "gl_cube")
 end

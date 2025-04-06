@@ -3,7 +3,7 @@ function p.__get_tex() return "block_light_green_border" end
 
 function p.__main()
     set_default_block("XAR_SOLID_BORING_LIGHT_GREEN_BORDER")
-    create_rect("XAR_EMPTY_BORING", 1,1,1, 14,14,12)
+    create_rect("gl_cube_air", 1,1,1, 14,14,12)
     create_rect("XAR_EMPTY_BORING", 7,7,13, 7,7,15)
     set_pos(15,15,15, "XAR_EMPTY_BORING")
     add_bent(15,15,15, "bent_base_ring_pink_dest")
