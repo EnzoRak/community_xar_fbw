@@ -1,1 +1,3 @@
 bent_debug_spawn_block debug_spawn_block large_box.obj
+bent_health_20p health_20p small_box.obj
+bent_health_max health_mega huge_box.obj
