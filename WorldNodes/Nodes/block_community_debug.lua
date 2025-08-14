@@ -59,4 +59,3 @@ function p.__main()
     --sure why not
     set_pos(1,0,1, "block_pink_flower")
 end
->>>>>>> 790389c (changeds)

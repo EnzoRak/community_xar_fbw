@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-bent_debug_spawn_block debug_spawn_block large_box.obj
-bent_health_20p health_20p small_box.obj
-bent_health_max health_mega huge_box.obj
-=======
 #i wonder if there is a way to reference the objs inside the xar package instead of having to make our own mesh names
 bent_debug_spawn_block debug_spawn_block large_box.obj
 bent_health_20p health_20p small_box.obj
 bent_health_max health_mega huge_box.obj
 #until ya boi comes up with a different texture to use we use "pink"
 bent_key_pink block_pink large_box.obj
->>>>>>> 790389c (changeds)
