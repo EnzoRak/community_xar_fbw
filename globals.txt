@@ -1,0 +1,2 @@
+b community_xar_fbw.showmetoggle false
+b community_xar_fbw.pink_ascended false

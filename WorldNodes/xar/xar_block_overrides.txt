@@ -1,2 +1,13 @@
+<<<<<<< HEAD
 XAR_ROOT block_new_root
 XAR_SPACE_GALAXY block_new_galaxy
+=======
+XAR_ROOT block_new_root
+XAR_SPACE_GALAXY block_new_galaxy
+XAR_SPACE_CASE_GAUNT block_new_space_case_gaunt
+XAR_BULK_STANDING_CUBES block_bulk_old
+XAR_DANDELIONS block_new_dandelions
+XAR_QUICKSAND_GRASS_11 block_new_quicksand_grass_11
+XAR_FANATIC_GRASS_BOTTOM block_new_fanatic_grass_bottom
+XAR_YING_TREE_INNER_BLUE_EXIT block_new_ying_tree_inner_blue_exit
+>>>>>>> 790389c (changeds)
