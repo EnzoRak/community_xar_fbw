@@ -16,16 +16,24 @@ function p.__main()
     add_bent(13,13,5, "bent_base_ring_pink_dest")
     add_bent(13,13,3, "bent_base_save")
     add_bent(13,11,11, "bent_sleep_hour")
-    
+
     add_bent(1,14,13, "bent_debug_spawn_block")
-    add_bent(2,12,2, "bent_health_max")
 
     -- Put your new blocks here!
-    set_pos(2,2,2, "community_debug")
-    set_pos(2,2,4, "galaxy_blackhole")
-    set_pos(2,2,6, "gl_cube")
-    set_pos(2,2,8, "dirty_air_case")
-
-    --sure why not
-    set_pos(1,0,1, "block_pink_flower")
+    local blocks = {
+        "community_debug",
+        "galaxy_blackhole",
+        "gl_cube",
+        "dirty_air_case",
+        "pink_flower",
+    }
+    
+    for j = 1, #blocks do
+        local i = j-1
+        local block = blocks[j]
+        local x = 2*(i%6+1)
+        local y = 2*(math.floor(i/6)%6+1)
+        local z = 2*(math.floor(i/36)+1)
+        set_pos(x,y,z,block)
+    end
 end
