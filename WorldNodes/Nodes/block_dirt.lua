@@ -5,6 +5,7 @@ function p.__main()
     set_default_block("dirt_no_max")
     create_sprinkles(0,0,0,15,15,15,0.5,"dirty_air")
     create_sprinkles(0,0,0,15,15,15,0.001,"gl_cube")
+    create_sprinkles(0,0,0,15,15,15,0.001,"XAR_MINI_AMMO_FOREST_STONEY")
     if randi(1,2) == 1 then
         local x = randi(0,15)
         local y = randi(0,15)
