@@ -2,7 +2,8 @@ function p.__get_is_solid() return false end
 function p.__get_tex() return "" end
 
 function p.__main()
-    set_default_block("XAR_EMPTY_BORING")
+    --just in case somebody does that one thing that they should not do.
+    set_default_block("XAR_ASCEND_SIMPLE")
     create_rect("XAR_ANTI_PLUG_CHILD", 1,0,0, 15,0,0)
     create_rect("XAR_ANTI_PLUG_CHILD", 0,0,0, 0,15,0)
     create_rect("XAR_ANTI_PLUG_CHILD", 1,15,15, 15,15,15)
@@ -42,5 +43,5 @@ function p.__main()
     add_bent(9,3,4,"bent_base_ring_red")
     add_bent(9,4,3,"bent_base_ring_red")
     add_bent(9,4,4,"bent_base_ring_red")
-    add_bent(9,9,9,"bent_base_txt","Yeah this isn't finished... cause clearly the Ring interaction isn't working as expected. They all seem to be using a variable named ^xFFFFFFdist^! which is based of absolute distance from bent, so they aren't like cubes. \nI think a better way of doing this would be getting a distance in each of the three axes to see if the player is within the cube shaped hitbox of the ring instead of a sphere shaped hitbox, which is what the current system does. \n\nSo yeah, Dan pls fix this ^xFF00FFbug^! and then I can ^x00FF00maybe^! finish this.")
+    add_bent_s(9,9,9,"bent_base_txt","Yeah this isn't finished... cause clearly the Ring interaction isn't working as expected. They all seem to be using a variable named ^xFFFFFFdist^! which is based of absolute distance from bent, so they aren't like cubes. \nI think a better way of doing this would be getting a distance in each of the three axes to see if the player is within the cube shaped hitbox of the ring instead of a sphere shaped hitbox, which is what the current system does. \n\nSo yeah, Dan pls fix this ^xFF00FFbug^! and then I can ^x00FF00maybe^! finish this.")
 end
