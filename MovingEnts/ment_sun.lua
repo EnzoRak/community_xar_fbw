@@ -4,11 +4,11 @@
 
 function p.__type_init(id)
     game_ment_type_init.monster(id)
-    ia_ment_set_builtin_var_f(id, "__radius", 1.5)
+    ia_ment_set_builtin_var_f(id, "__radius", 0.5)
     ia_ment_set_builtin_var_s(id, "__mesh", "ment_sun")
     --needs a buff on god
-    ia_ment_new_var_i(id, "health", 50000, 60.0)
-    ia_ment_new_static_var_f(id, "dps", 10.0)
+    ia_ment_new_var_i(id, "health", 1441441, 60.0)
+    ia_ment_new_static_var_f(id, "dps", 50.0)
     ia_ment_new_static_var_s(id, "sound_hurt", "hurt_mystic")
     ia_ment_new_static_var_f(id, "sound_hurt_period", 0.7)
     ia_ment_new_static_var_s(id, "sound_death", "die_mystic")
@@ -19,13 +19,24 @@ function p.__type_init(id)
     ia_ment_new_static_var_i(id, "die_drop_extra_levels", 1)
     ]]
     ia_ment_new_static_var_s(id, "identity_str", "Sun God")
-    ia_ment_new_var_i(id, "damage", 10, 60.0)
     --
     ia_ment_new_static_var_b(id, "damage_aura_has", true)
     ia_ment_new_static_var_f(id, "damage_aura_duration", 1.0)
-    ia_ment_new_static_var_i(id, "damage_aura_damage", 10)
+    ia_ment_new_static_var_i(id, "damage_aura_damage", 10000)
     ia_ment_new_static_var_f(id, "damage_aura_radius", -1.0)
     ia_ment_new_var_f(id, "damage_aura_next_time", 0.0, 60.0)
+
+    ia_ment_new_var_b(id, "picture_aura_has", true, 60.0)
+    ia_ment_new_static_var_s(id, "picture_aura_picture", "crossbones")
+    ia_ment_new_static_var_f(id, "picture_aura_radius", 10000000)
+    ia_ment_new_static_var_b(id, "picture_aura_only_same_level", false)
+    ia_ment_new_var_f(id, "picture_aura_next_time", 0.0, 60.0)
+
+    ia_ment_set_builtin_var_i(id, "__extra_min_levels", 2) --Ok?
+    ia_ment_set_builtin_var_i(id, "__extra_max_levels", 2) --Ok?
+
+    
+    ia_ment_set_builtin_var_b(id, "__player_can_telefrag", false) --Weird. To prevent cheese.
 end
 
 -------------------------------------------------

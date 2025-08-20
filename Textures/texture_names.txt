@@ -1,4 +1,5 @@
 debug_spawn_block _ plusBlock.png
 health_20p _ ent_health20%.jpg
 #because of its similarities to Oracle (TM) the Company Logo, but I can't actually use that one. So here is a similar looking image but not actually. This one is free to use under the Pixabay Content License (https://pixabay.com/nl/service/license-summary/)
-ment_oracle _ rennen-spoor-atletiekbaan-loop-1018587.png
+ment_oracle a rennen-spoor-atletiekbaan-loop-1018587.png
+ment_chewing_gum _ chewinggum.jpg

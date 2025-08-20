@@ -4,7 +4,7 @@
 
 function p.__type_init(id)
     game_ment_type_init.monster(id)
-    ia_ment_set_builtin_var_f(id, "__radius", 30.0)
+    ia_ment_set_builtin_var_f(id, "__radius", 3.0)
     ia_ment_set_builtin_var_s(id, "__mesh", "ment_oracle")
     --needs a buff on god
     ia_ment_new_var_i(id, "health", 50000, 60.0)

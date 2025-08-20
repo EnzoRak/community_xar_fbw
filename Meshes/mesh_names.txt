@@ -6,3 +6,4 @@ bent_health_max health_mega huge_box.obj
 bent_key_pink block_pink large_box.obj
 ment_oracle ment_oracle sphere.obj
 ment_sun block_concrete_yellow sphere.obj
+ment_chewing_gum ment_chewing_gum sphere.obj

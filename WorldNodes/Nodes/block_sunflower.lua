@@ -3,7 +3,7 @@ function p.__get_tex() return "" end
 
 function p.__main()
 
-    set_default_block("XAR_EMPTY_BORING")
+    set_default_block("XAR_MOSSY_AIR_UP_DOWN_TOP")
     local sundirection = get_input_path_block_i(get_level(), "sundirection")
     if (sundirection ~= -1) then
         create_rect("XAR_YING_TREE_INNER", 7, 7, 0, 7, 7, 5)
@@ -39,7 +39,7 @@ function p.__main()
                 block_set_i(x,y,0, "sundirection", sundirection)
             end
         end
-        add_bent_s(7,7,9,"bent_base_txt","This is a ^xFFFF00Sunflower^!. You can shrink and enter by going through 2 8x8x8 mazes, with some maps of the mazes inside, or by going throught the seedy tunnels in the face of the flower seed part. Obviously that second option has more difficult enemies.")
+        add_bent_s(7,7,9,"bent_base_txt","This is a ^xFFFF00Sunflower^!. You can shrink and enter by going through 2 8x8x8 mazes, with some maps of the mazes inside, or by going throught the seedy tunnels in the face of the flower seed part. Obviously that second option has more difficult enemies.\n\nIt is impossible to go through the sunspots without killing any enemies, so his is not a good idea for Pacifist players.")
         add_bent(5, 7, 1, "bent_base_ring_green")
         add_bent(7, 5, 1, "bent_base_ring_green")
         add_bent(7, 9, 1, "bent_base_ring_green")

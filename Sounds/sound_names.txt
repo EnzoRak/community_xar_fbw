@@ -1,0 +1,4 @@
+#based?
+die_chewing_gum             chewinggumdie.mp3
+hit_chewing_gum             chewinggumhit.mp3
+

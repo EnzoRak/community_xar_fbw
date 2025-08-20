@@ -16,29 +16,6 @@ function p.__main()
     create_rect("XAR_SOLID_BORING_CONCRETE_CHECKER_YELLOW", 15,0,1, 15,0,14)
     create_rect("XAR_SOLID_BORING_CONCRETE_CHECKER_YELLOW", 1,15,0, 15,15,0)
     
-    --default treasure
-    add_bent(7,7,5,"bent_armor_1000p") 
-    add_bent(5,5,5,"bent_gold_1000")
-    add_bent(9,9,5,"bent_gold_1000")
-    for i = 1, 13 , 2 do
-        for j = 1, 13, 2 do
-            if(i%4==1) then
-                if(j%4 ==1) then
-                    add_bent(i,j,1,"bent_upgrade_gun_8_ammo_cap")
-                else
-                    add_bent(i,j,1,"bent_upgrade_gun_7_fire_speed")
-                    add_bent(i,j,3,"bent_upgrade_gun_7_fire_speed")
-                end
-            else
-                if(j%4 ==1) then
-                    add_bent(i,j,1,"bent_upgrade_gun_6_damage")
-                else
-                    add_bent(i,j,1,"bent_upgrade_9_proj_speed")
-                    add_bent(i,j,3,"bent_upgrade_9_proj_speed")
-                end
-            end
-        end
-    end
 
     local pathHasClay = false
     local pathHasMinigun = false
@@ -52,8 +29,40 @@ function p.__main()
         end
     end
     if(pathHasClay and pathHasMinigun)  then
-        --the better treasure
+        add_bent(7,7,5,"bent_armor_1000p") 
+        add_bent(5,5,5,"bent_gold_1000")
+        add_bent(9,9,5,"bent_gold_1000")
+        for i = 1, 13 , 2 do
+            for j = 1, 13, 2 do
+                if(i%4==1) then
+                    if(j%4 ==1) then
+                        add_bent(i,j,1,"bent_upgrade_gun_8_ammo_cap")
+                    else
+                        add_bent(i,j,1,"bent_upgrade_gun_7_fire_speed")
+                        add_bent(i,j,3,"bent_upgrade_gun_7_fire_speed")
+                    end
+                else
+                    if(j%4 ==1) then
+                        add_bent(i,j,1,"bent_upgrade_gun_6_damage")
+                    else
+                        add_bent(i,j,1,"bent_upgrade_gun_9_proj_speed")
+                        add_bent(i,j,3,"bent_upgrade_gun_9_proj_speed")
+                    end
+                end
+            end
+        end
+        set_pos(7,7,13,"block_sunflower_ritual")
     else
-       add_bent_s(9,9,10,"bent_base_txt","Now there would be better treasure here if you are inside of a Clay Planet and Small Minigun Planet at the same time. \n\nThis 'better treasure' lets you fight a boss and unlock a new area.")
+        --default treasure
+        add_bent(7,7,5,"bent_armor_200p") 
+        add_bent(5,5,5,"bent_gold_100")
+        add_bent(9,9,5,"bent_gold_100")
+        add_bent(1,1,1,"bent_upgrade_gun_8_ammo_cap")
+        add_bent(1,3,1,"bent_upgrade_gun_7_fire_speed")
+        add_bent(3,1,1,"bent_upgrade_gun_7_fire_speed")
+        add_bent(3,3,1,"bent_upgrade_gun_6_damage")
+        add_bent(5,1,1,"bent_upgrade_gun_9_proj_speed")
+        add_bent(1,5,1,"bent_upgrade_gun_9_proj_speed")
+        add_bent_s(9,9,10,"bent_base_txt","Now there would be better treasure here if you are inside of a Clay Planet and Small Minigun Planet at the same time. \n\nThis 'better treasure' lets you fight a boss and unlock a new area.")
     end
 end
