@@ -44,10 +44,10 @@ function p.__main()
     local pathHasMinigun = false
     for i = get_level(), 1, -1 do
         local thecurrenttype = get_input_path_bt(i)
-        if(thecurrenttype = "XAR_PLANET_CLAY") then
+        if(thecurrenttype == "XAR_PLANET_CLAY") then
             pathHasClay = true
         end
-        if(thecurrenttype = "XAR_SMALL_MINIGUN_PLANET") then
+        if(thecurrenttype == "XAR_SMALL_MINIGUN_PLANET") then
             pathHasMinigun = true
         end
     end
