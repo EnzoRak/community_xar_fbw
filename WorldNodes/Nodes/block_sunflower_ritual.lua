@@ -22,8 +22,8 @@ function p.__on_use(level, pos)
     local leveldecrementer = ga_get_viewer_level()
     ga_console_print("Sun found?  " .. leveldecrementer)
     ga_print("Sun found?  " .. leveldecrementer)
-    while sunfound == false or leveldecrementer > 2 do
-        if( ga_search_for_bt_in_chunk(ga_get_viewer_ancestor_chunk_id(leveldecrementer), "XAR_SPACE_SUN")) then
+    while sunfound == false and leveldecrementer > 2 do
+        if( ga_search_for_bt_in_chunk(ga_get_viewer_ancestor_chunk_id(leveldecrementer), "XAR_SPACE_SUN").is_valid) then
             sunfound = true
         end
         leveldecrementer = leveldecrementer - 1
@@ -34,6 +34,8 @@ function p.__on_use(level, pos)
     ga_print("Sun found?  " .. tostring(sunfound))
     ga_console_print("Sun found? (Post) " .. leveldecrementer)
     ga_print("Sun found?  (Post)" .. leveldecrementer)
+    --bro its good
+    ga_play_sound("die_club_dryer_long")
     ga_ment_start(leveldecrementer, ga_chunk_id_and_lbp_to_bp(ga_get_viewer_ancestor_chunk_id(leveldecrementer), std.vec(7,7,7)), "ment_sun")
     ga_ment_end()
     ga_block_set_i(level, pos, "canuse", 0)
