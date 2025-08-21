@@ -32,6 +32,8 @@ function p.__on_use(level, pos)
     leveldecrementer = leveldecrementer + 1
     ga_console_print("Sun found?  " .. tostring(sunfound))
     ga_print("Sun found?  " .. tostring(sunfound))
+    ga_console_print("Sun found? (Post) " .. leveldecrementer)
+    ga_print("Sun found?  (Post)" .. leveldecrementer)
     ga_ment_start(leveldecrementer, ga_chunk_id_and_lbp_to_bp(ga_get_viewer_ancestor_chunk_id(leveldecrementer), std.vec(7,7,7)), "ment_sun")
     ga_ment_end()
     ga_block_set_i(level, pos, "canuse", 0)
