@@ -52,6 +52,7 @@ function p.__main()
             end
         end
         set_pos(7,7,13,"block_sunflower_ritual")
+        add_bent_s(9,9,10,"bent_base_txt","^xFF00FFYou can leave by going through the stem of the flower, which is Ying Tree^!")
     else
         --default treasure
         add_bent(7,7,5,"bent_armor_200p") 
@@ -63,6 +64,6 @@ function p.__main()
         add_bent(3,3,1,"bent_upgrade_gun_6_damage")
         add_bent(5,1,1,"bent_upgrade_gun_9_proj_speed")
         add_bent(1,5,1,"bent_upgrade_gun_9_proj_speed")
-        add_bent_s(9,9,10,"bent_base_txt","Now there would be better treasure here if you are inside of a Clay Planet and Small Minigun Planet at the same time. \n\nThis 'better treasure' lets you fight a boss and unlock a new area.")
+        add_bent_s(9,9,10,"bent_base_txt","Now there would be better treasure here if you are inside of a Clay Planet and Small Minigun Planet at the same time. \nThis 'better treasure' lets you fight a boss and unlock a new area.\n\nYou can leave by going through the stem of the flower, which is Ying Tree")
     end
 end

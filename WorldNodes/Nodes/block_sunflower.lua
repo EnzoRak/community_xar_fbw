@@ -3,7 +3,7 @@ function p.__get_tex() return "" end
 
 function p.__main()
 
-    set_default_block("XAR_MOSSY_AIR_UP_DOWN_TOP")
+    set_default_block("XAR_MOSSY_AIR_UP_DOWN")
     local sundirection = get_input_path_block_i(get_level(), "sundirection")
     if (sundirection ~= -1) then
         create_rect("XAR_YING_TREE_INNER", 7, 7, 0, 7, 7, 5)

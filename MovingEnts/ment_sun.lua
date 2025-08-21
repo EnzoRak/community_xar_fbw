@@ -4,7 +4,7 @@
 
 function p.__type_init(id)
     game_ment_type_init.monster(id)
-    ia_ment_set_builtin_var_f(id, "__radius", 0.5)
+    ia_ment_set_builtin_var_f(id, "__radius", 2.5)
     ia_ment_set_builtin_var_s(id, "__mesh", "ment_sun")
     --needs a buff on god
     ia_ment_new_var_i(id, "health", 1441441, 60.0)
@@ -32,11 +32,14 @@ function p.__type_init(id)
     ia_ment_new_static_var_b(id, "picture_aura_only_same_level", false)
     ia_ment_new_var_f(id, "picture_aura_next_time", 0.0, 60.0)
 
-    ia_ment_set_builtin_var_i(id, "__extra_min_levels", 2) --Ok?
-    ia_ment_set_builtin_var_i(id, "__extra_max_levels", 2) --Ok?
+    ia_ment_set_builtin_var_i(id, "__extra_min_levels", 1234) --Ok?
+    ia_ment_set_builtin_var_i(id, "__extra_max_levels", 1234) --Ok?
 
     
     ia_ment_set_builtin_var_b(id, "__player_can_telefrag", false) --Weird. To prevent cheese.
+    --
+    ia_ment_set_builtin_var_b(id, "__collides", false)
+    ia_ment_set_builtin_var_b(id,"__radius_lvlinv", true)
 end
 
 -------------------------------------------------

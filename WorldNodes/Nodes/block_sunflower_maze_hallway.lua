@@ -77,7 +77,7 @@ function p.__main()
                 if(o < 0.3) then
                     add_ment(x,y,z,"ment_monster_beholder_minor")
                 elseif(o <0.5) then
-                    add_ment(x,y,z,"ment_monster_jug_formidable")
+                    add_ment(x,y,z,"ment_monster_jug_tough")
                 elseif(o < 0.75) then
                     add_ment(x,y,z,"ment_monster_disciple")
                 elseif(o<0.9) then
@@ -89,7 +89,7 @@ function p.__main()
             else
                 --roaming monster, such as a projectile?
                 if(o<0.1) then
-                    add_ment(x,y,z,"ment_monster_rat")
+                    add_ment(x,y,z,"ment_monster_rat_minor")
                 elseif(o > 0.8) then
                     ment_start(x,y,z,"ment_monster_menace_proj")  
                     ment_set_f("__homing_speed", 5.0)
