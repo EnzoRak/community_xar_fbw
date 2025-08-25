@@ -74,6 +74,8 @@ function p.__main()
     set_pos(12,3,6,"XAR_RAINBOW_FLOWER_DEBUG_4")    
     --check for pink key
     add_env_rect( 9,1,1, 14,14,14, "ascension_check")
+    --just in case
+    add_env_rect( 1,1,1, 8,14,5, "ascension_check")
     add_bent_s(4,4,12,"bent_base_txt","This is the not-so-uncommon ^xFF00FFPink Flower^!\nThere is an invisible death barrier around the corner that will kill you instantly if you don't have the Pink Key. \n^x00FF00Hint: Check out my challenge at the top of the space gauntlet^!")
     add_bent(4,4,3,"bent_base_ring_green")
     if(get_input_path_length()-2 < 0) then

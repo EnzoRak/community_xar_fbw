@@ -20,12 +20,14 @@ function p.__main()
     add_bent(1,14,13, "bent_debug_spawn_block")
 
     -- Put your new blocks here!
+    --can we have a ledge kinda thing just like the xar debug room, these invisible blocks dont have floors. 
     local blocks = {
         "community_debug",
         "galaxy_blackhole",
         "gl_cube",
         "dirty_air_case",
         "pink_flower",
+        "sunflower",
     }
     
     for j = 1, #blocks do
