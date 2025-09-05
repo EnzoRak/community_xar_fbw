@@ -15,9 +15,11 @@ function p.__main()
     local randomvalue = randf()
     if(randomvalue < 0.41) then
         ment_start(7,7,7,"ment_chewing_gum")
+        --[[doesnt actually seem to do anything...
         ment_set_b("emp_immune", true)
         ment_set_b("freeze_immune", true)
-        ment_set_s("identity_str","I am Chewing Gum (IMMUNE)")
+        ]]--
+        ment_set_s("identity_str","I am Chewing Gum")
         ment_end()
     elseif(randomvalue < 0.52) then
         ment_start(7,7,7,"ment_monster_lamprey_yellow")

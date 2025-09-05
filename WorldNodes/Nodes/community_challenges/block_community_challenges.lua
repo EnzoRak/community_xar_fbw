@@ -22,18 +22,23 @@ function p.__main()
     set_pos(14,4,14, "XAR_EMPTY_BORING")       --hallway seperator
     set_pos(14,5,14, "XAR_EMPTY_BORING")       --another hallway seperator
     set_pos(13,5,14, "block_rm_intro")       --rings maze challenge intro (what should the treasure be?)
-    set_pos(12,5,14, "block_rm_challenge")       --rings maze 
-    add_bent(13,5,14,"bent_base_ring_green")    --prevent softlock from grow rings(ring maze)
+    create_rect("XAR_EMPTY_BORING", 10,5,14, 12,5,14)
+    set_pos(9,5,14, "block_rm_challenge")       --rings maze 
+    add_bent(10,5,14,"bent_base_ring_green")    --prevent softlock from grow rings(ring maze)
     
     set_pos(14,6,14, "XAR_EMPTY_BORING")      --wdythink
     set_pos(14,7,14, "XAR_EMPTY_BORING")
-    set_pos(13,7,14, "XAR_EMPTY_BORING")       --pool challenge intro
-    set_pos(12,7,14, "XAR_EMPTY_BORING")       --balls megachunk
+    set_pos(13,7,14, "XAR_ANTI_PLUG_LARGE_GLASS")       --pool challenge intro? (nah i could have used the toronto large anti plug though)
+    set_pos(12,7,14, "block_pool_challenge")       --balls megachunk
 
-    --[=====[    add your own challenge?
     set_pos(14,8,14, "XAR_EMPTY_BORING")
     set_pos(14,9,14, "XAR_EMPTY_BORING")
-    set_pos(13,9,14, "XAR_EMPTY_BORING")
+    set_pos(13,9,14, "block_4d_maze_container") --should contain the intro. 
+    --add your own challenge?
+    --[=====[    
+    set_pos(14,10,14, "XAR_EMPTY_BORING")
+    set_pos(14,11,14, "XAR_EMPTY_BORING")
+    set_pos(13,11,14, "XAR_EMPTY_BORING")
     --]=====]
 
 end
