@@ -19,7 +19,7 @@ function p.__type_init(id)
     ia_ment_new_static_var_f(id, "xp_mod", 2) --High!
     ia_ment_new_static_var_f(id, "dps", 3000.0)
     ia_ment_new_static_var_b(id, "emp_immune", true) --Emp, but not freeze immune.
-    ia_ment_new_static_var_b(id, "freeze_immune", false) --Emp, but not freeze immune.
+    ia_ment_new_static_var_b(id, "freeze_immune", true) --Emp, but not freeze immune.
     local aura_radius = 8.0
     ia_ment_new_static_var_f(id, "damage_aura_duration", 1.0)
     ia_ment_new_var_f(id, "damage_aura_next_time", 0.0, 60.0)
