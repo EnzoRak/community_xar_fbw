@@ -34,7 +34,8 @@ function p.get_coords(i, X, Y, Z, W)
 end
 
 -- Generate 4D maze
-function p.generate_maze_4d(X,Y,Z,W)
+--fixed 4d rectangle for now, eventually we can have the user insert the edges. 
+function p.generate_rect_maze_4d(X,Y,Z,W)
     -- Step 1: Generate 4D maze using Kruskal
     local nodes = X*Y*Z*W
     local dsu = std_4dmaze.make_set(nodes)
@@ -55,9 +56,9 @@ function p.generate_maze_4d(X,Y,Z,W)
     end
 
     -- Shuffle edges
-    math.randomseed(os.time())
+    srand(seed_normal())
     for i=#edges,2,-1 do
-        local j = math.random(i)
+        local j = randi(1,i)
         edges[i], edges[j] = edges[j], edges[i]
     end
 
@@ -216,7 +217,7 @@ function print_w_layer(maze,X,Y,Z,W,w_layer)
 end
 
 -- Example usage:
-local maze = generate_maze_4d(3,3,2,4)
+local maze = generate_rect_maze_4d(3,3,2,4)
 print_maze_layers(maze,3,3,2,4)
 print_w_layer(maze,3,3,2,4,0)
 print_w_layer(maze,3,3,2,4,1)

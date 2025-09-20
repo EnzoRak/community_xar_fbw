@@ -38,8 +38,7 @@ function p.__on_use(level, bp)
 end
 
 function p.__render(level, bp)
-    --im litterallly too lazy to actually make it yellow...
-    --somebody else can do this :)
+    --its yellow now :>
     local cur_time = ga_get_game_time()
     local speed_mod = 1.0
     local angle1 = cur_time * 50.0 * speed_mod
@@ -47,20 +46,11 @@ function p.__render(level, bp)
     local angle2 = cur_time * 70.0 * speed_mod
     local axis2 = std.vec(0.0, 1.0, 0.0)
     local angle3 = cur_time * 90.0 * speed_mod
-    local axis3 = std.vec(1.0, 0.0, 0.0)
-    if(math.floor(cur_time*2) % 2 == 0) then
-        ga_render_matrix_rotated(angle1, axis1)
-        ga_render_mesh("ring_shrink_large")
-        ga_render_matrix_rotated(angle2, axis2)
-        ga_render_mesh("ring_shrink_med")
-        ga_render_matrix_rotated(angle3, axis3)
-        ga_render_mesh("bent_base_skull_cube_green")
-    else
-        ga_render_matrix_rotated(angle1, axis1)
-        ga_render_mesh("ring_grow_large")
-        ga_render_matrix_rotated(angle2, axis2)
-        ga_render_mesh("ring_grow_med")
-        ga_render_matrix_rotated(angle3, axis3)
-        ga_render_mesh("bent_base_skull_cube_red")
-    end
+    local axis3 = std.vec(1.0, 0.0, 0.0)    
+    ga_render_matrix_rotated(angle1, axis1)
+    ga_render_mesh("ring_yellow_large")
+    ga_render_matrix_rotated(angle2, axis2)
+    ga_render_mesh("ring_yellow_med")
+    ga_render_matrix_rotated(angle3, axis3)
+    ga_render_mesh("ring_yellow_small")
 end

@@ -23,7 +23,7 @@ function p.__on_use(level, bp)
     local new_last4 = s:sub(-4)
     --775 is where we assume the maze is, 777 is the final offset in the chunk.
     local vec3 = ga_block_get_v(level,bp,"maze_pos")
-    s = s .. "_" .. vec3.x .. vec3.y .. vec3.z .. new_last4
+    s = s .. "_" .. math.floor(vec3.x) .. math.floor(vec3.y) .. math.floor(vec3.z) .. new_last4
     ga_tele(s,std.vec(7,7,7))
 end
 

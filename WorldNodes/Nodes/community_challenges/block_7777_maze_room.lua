@@ -5,21 +5,43 @@ function p.__get_tex() return "" end
 function p.__main()
     set_default_block("XAR_EMPTY_BORING")
 
-    --[[
-    for x = 3, 12, 1 do       
-        for y = 3, 12, 1 do
-            for z = 3, 12, 1 do
-                add_bent(x,y,z,"bent_gold_1000")
-            end
-        end
+    local parent_depth = 1
+    local parent_maze_encoded = ""
+    local level = get_level()
+    if( get_input_path_block_var_exists(level-1, "maze_w_depth", "i") ) then
+        parent_depth = get_input_path_block_i(level-1, "maze_w_depth")
     end
-    add_bent_s(2,2,2,"bent_base_txt","^x00FF00Repeatedly press your telekinesis button to clear all the gold!^!")
-    add_bent_s(12,12,12,"bent_base_txt","^xFFFFFFMessage from me: \n\n\"As above, so below.\"\nThanks for playing through this challenge, hope you enjoyed!^!")
-    --https://en.wikipedia.org/wiki/Emerald_Tablet#%D8%AD%D9%82%D9%8C%D9%91%20%D9%84%D8%A7%20%D8%B4%D9%83%D9%8E%D9%91%20%D9%81%D9%8A%D9%87%20%D8%B5%D9%8E%D8%AD%D9%8A%D8%AD%D8%8C%20%D8%A5%D9%86%D9%91%20%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89%20%D9%85%D9%86%20%D8%A7%D9%84%D8%A3%D8%B3%D9%81%D9%84%20%D9%88%D8%A7%D9%84%D8%A3%D8%B3%D9%81%D9%84%20%D9%85%D9%86%20%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89%D8%8C
-    set_pos(1,1,14,"XAR_ASCEND_TEMPLE_ABOVE")
-    --minus 1000 negative aura.
-    add_bent(8,0,8,"bent_pic_magician")
-    ]]
+    if( get_input_path_block_var_exists(level-1, "maze_encoded", "s") ) then
+        parent_maze_encoded = get_input_path_block_s(level-1, "maze_encoded")
+    end
+    --same
+    local depth = parent_depth
+    local maze_encoded = parent_maze_encoded
+    chunk_set_i("room_w_depth", depth)
+    chunk_set_s("maze_encoded", maze_encoded)
+
+    local digit = " "
+    digit = get_input_path_block_s(level, "open_4d_id")
+
+    if(digit == "A") then
+    elseif(digit == "B") then
+        --if the maze is not at position 7,7,5, then make sure you use block_set_v(x,y,z,"maze_pos",std.vec(mazex,mazey,mazez)) to configure it. 
+        set_pos(9,9,5,"block_maze_down_teleporter")
+        set_pos(7,7,5,"block_7777_maze")
+    elseif(digit == "C") then
+        set_pos(9,9,4,"block_maze_up_teleporter")
+    elseif(digit == "D") then
+        set_pos(9,9,5,"block_maze_down_teleporter")
+        set_pos(9,9,4,"block_maze_up_teleporter")
+        set_pos(7,7,5,"block_7777_maze")
+    else
+        --hallway...
+        return
+    end
+
+    local n = get_input_path_block_v(level, "room_pos")
+    add_bent_s(2,2,2,"bent_base_txt","You are at maze vertex position "..math.floor((n.x-1)/2)..","..math.floor((n.y-1)/2)..","..math.floor((n.z-1)/2)..","..depth.." in the maze, where the last number is your 'w-depth'. The treasure is at maze vertex position 6,6,6,6")
+
 end
 
 
@@ -30,4 +52,6 @@ function p.__type_init(id)
     ia_block_new_var_s(id, "open_4d_id", "")
     --should be equal to the parent maze depth 
     ia_block_new_var_i(id, "room_w_depth", 0)
+    --for text box (you don't need this)
+    ia_block_new_var_v(id,"room_pos",std.vec(0,0,0))
 end

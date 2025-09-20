@@ -25,7 +25,7 @@ function p.__main()
             end
         end
     end
-    
+    set_pos(1,1,14,"XAR_ASCEND_TEMPLE_ABOVE")
     add_bent(7,7,7,"bent_base_ring_green")
     add_bent(5,5,5,"bent_base_waypoint_out_only")
     add_bent_s(10,10,10,"bent_base_txt","Note: You should set a waypoint somewhere in I3 with easy access to a Pink Ring in case you decide to come back for ^xFF00FFthe secret on the floor.^!")
