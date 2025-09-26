@@ -11,4 +11,6 @@ bent_pic_magician bent_magician 5_9_picture_box.obj
 ring_yellow_large block_concrete_yellow ring_large.obj
 ring_yellow_med block_concrete_yellow ring_med.obj
 ring_yellow_small block_concrete_yellow ring_small.obj
-bent_7777_maze_upgrades block_yellow_black_striped large_box.obj
+bent_evaluator block_yellow_black_striped large_box.obj
+ment_evaluator block_yellow_black_striped large_box.obj
+ment_monster_dream_core sleep sphere.obj

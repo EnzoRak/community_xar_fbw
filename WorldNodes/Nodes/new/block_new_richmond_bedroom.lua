@@ -21,6 +21,14 @@
 --Mossy Air passcode, so basically other blocks can have a variable that keeps track of the code, and another one that sets the digit added of the next one. 
 
 --deep space void air, possiablly a passcode, or another challenge, or more content in general. I want to place a link in dreamland somewhere. 
+
+--haystack dungeon, with needle microdungeon inside 
+
+--a Happy Land inside Hell Temple becomes sad lands. 
+
+--from room 15/15, a self replecating block, that creates ments around it that creates more ments, and the old ments "transform" into blocks. Once a chunk is completely filled of this block, it transforms the entire chunk into a copy of the block at the larger level, which should also keep spreading. Eventually, the entire world can be destryed, but it would be funny, and also we can make it so that this block (which is actually a ment) can only be in deep areas of the world. 
+
+--a chunk with every chunk that has a unique secret trophy in it (because there is no secret trophy bent, you must place the specific xar chunk with the said trophy to get the specific trophy in it.)
 function p.__get_is_solid() return true end
 function p.__get_tex() return "block_bedroom" end
 

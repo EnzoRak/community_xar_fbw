@@ -6,7 +6,7 @@ end
 
 function p.__get_use_msg(level, bp)
     if( not p.__get_can_use(level, bp, dist) ) then return "" end
-    return "Use to get all upgrades"
+    return "Use to Evaluate code"
 end
 
 local function safe_eval(expr, level, bp)
@@ -22,6 +22,8 @@ local function safe_eval(expr, level, bp)
         game_bent = game_bent,
         ga_play_sound = ga_play_sound,
         ga_play_sound_menu = ga_play_sound_menu,
+        ga_console_print = ga_console_print,
+        ga_print = ga_print,
 
         -- make 'p' table itself visible
         p = p,
@@ -40,11 +42,11 @@ end
 
 function p.__on_use(level, bp)
     ga_play_sound_menu("use")
-    local expr = ga_bent_get_param_s(level, bp)  -- your multi-line upgrade string
+    local expr = ga_bent_get_param_s(level, bp)  
     local result, err = safe_eval(expr, level, bp)
     if err then
         ga_print("Evaluation error: " .. tostring(err))
     else
-        ga_print("Evaluated")
+        ga_print("Evaluated" .. tostring(result))
     end
 end

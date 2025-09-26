@@ -11,7 +11,7 @@ function p.__main()
             end
         end
     end
-    add_bent_s(7,7,9,"bent_7777_maze_upgrades",
+    add_bent_s(7,7,9,"bent_evaluator",
     [[
         for i = 1, 2000 do
             game_upgrades.spice()
