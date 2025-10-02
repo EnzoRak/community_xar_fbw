@@ -60,8 +60,8 @@ function p.__on_alarm(inst_id, alarm_name)
     game_ment_alarms.monster(inst_id, alarm_name)
 end
 
-function p.__on_die(inst_id)
-    game_ment_die.main(inst_id)
+function p.on_die(inst_id)
+    game_ment_die.default(inst_id)
 end
 
 --need a custom aura behavior basicallly

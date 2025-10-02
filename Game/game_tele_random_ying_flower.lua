@@ -135,15 +135,15 @@ function p.fromthetop()
             --this specific debug area
             ga_tele("777_777_777_777_777_88f_88f_0f1_0f0",std.vec(8,8,7))
             ga_set_s("community_xar_fbw.ryf.next_target","debug")
-        elseif(discrimantone<0.11) then
+        elseif(discrimantone<0.10) then
             --this specific alpha cube in the gauntlet. 
             ga_tele("777_77f_7bc",std.block_center(std.vec(7,7,7)))
             ga_set_s("community_xar_fbw.ryf.next_target","alphacube")
-        elseif(discrimantone<0.22) then
+        elseif(discrimantone<0.21) then
             --what goes around comes around. Deep space. 
             ga_tele("777",std.block_center(std.vec(7,7,7)))
             ga_set_s("community_xar_fbw.ryf.next_target","deepspace")
-        elseif(discrimantone<0.96) then
+        elseif(discrimantone<0.88) then
             --what goes around comes around. Near space. 
             ga_tele("777_777_777",std.block_center(std.vec(7,7,7)))
             ga_set_s("community_xar_fbw.ryf.next_target","nearspace")
@@ -154,8 +154,8 @@ function p.fromthetop()
         end
 
         --put one off tests here
-        --ga_tele("777_777_777_777_777_88f_88f_0f1_0f0_193",std.vec(8,8,7))
-        --ga_set_s("community_xar_fbw.ryf.next_target","orange")
+        ga_tele("777_777_777",std.block_center(std.vec(7,7,7)))
+        ga_set_s("community_xar_fbw.ryf.next_target","nearspace")
 
         return true
     end
@@ -169,7 +169,7 @@ function p.fromthetop()
     --how many ways can you spot of backtracking?
     --how many ways can you spot of random selection?
     if(next_target == "debug") then
-        --random event here?
+        --more?
         if(discduo<0.6) then
             p.advance_to_pos(1,5,3)
             ga_set_s("community_xar_fbw.ryf.next_target","yingflower")
@@ -179,7 +179,7 @@ function p.fromthetop()
         end
         return true
     elseif(next_target == "yingflower") then
-        --more choices needed here. what if we don't go straight to the starting room?
+        --more?
         ga_console_print(path)
         if(discduo < 0.8 ) then
             --straight to the room, skipping tutorial and such. 
@@ -195,10 +195,11 @@ function p.fromthetop()
         end
         return true
     elseif(next_target == "yingforest") then
-        if(discduo <= 0.02) then
+        --more?
+        if(discduo <= 0.06) then
             ga_console_print("descending orange")
             ga_set_s("community_xar_fbw.ryf.next_target","orangeyf1")
-        elseif(discduo < 0.27) then
+        elseif(discduo < 0.18) then
             local data = p.advance_to_random_pos_search_maybe(p.randinext(0,32766), "XAR_YING_FOREST_DEEP_HANGING")
             if(data.is_valid) then
                 local pos = data.value
@@ -212,9 +213,11 @@ function p.fromthetop()
         end
         return true
     elseif(next_target == "taumoon") then
+        --complete this
         ga_set_b("community_xar_fbw.ryf.started",false)
         return false
     elseif(next_target == "alphacube") then
+        --finished
         if(discduo < 0.5) then
             --XAR_CUBE1_TREASURE
             p.advance_to_random_pos_search_maybe_descend(0, "XAR_CUBE1_TREASURE")
@@ -228,25 +231,33 @@ function p.fromthetop()
         end
         return true
     elseif(next_target == "deepspace") then
+        --finished
         local pe = path
         for i = 1, 6 do
             ga_console_print("randinext called")
             pe = pe .. "_" .. string.format("%03x", p.randinext(0,4095))
         end
         ga_tele(pe,std.block_center(std.vec(7,7,7)))
-        ga_set_s("community_xar_fbw.ryf.next_target","deepspacedescendverifier")
+        ga_set_s("community_xar_fbw.ryf.next_target","spacemiddescendverifier")
         return true
     elseif(next_target == "nearspace") then
+        --more?
         local pos = p.random_pos_restrict_range(6,6,6, 8,8,8)
         local bt = ga_block_get(level, pos);
-        if( bt == "XAR_SPACE_TOP_0_B" ) then
-            p.advance_to_pos(pos.x, pos.y, pos.z)
-            ga_set_b("community_xar_fbw.ryf.started",false)
-            return false
+        if( bt ~= "XAR_SPACE_TOP_0" ) then
+            local pe = path
+            pe = pe .. "_" .. string.format("%x%x%x", pos.x, pos.y, pos.z)
+            for i = 1, 3 do
+                ga_console_print("randinext called")
+                pe = pe .. "_" .. string.format("%03x", p.randinext(0,4095))
+            end
+            ga_tele(pe,std.block_center(std.vec(7,7,7)))
+            ga_set_s("community_xar_fbw.ryf.next_target","spacemiddescendverifier")
         end
         --we don't have to set anything. If this ain't true, it come right back to here. 
         return true
     elseif(next_target == "mylantis") then
+        --more?
         if(discduo <= 1) then
             p.advance_to_pos(8, 8, 15)
             ga_set_s("community_xar_fbw.ryf.next_target","topcity")
@@ -274,7 +285,19 @@ function p.fromthetop()
         if(discduo < 0.5) then
             local pe = path
             local pos = p.advance_to_random_pos_search_maybe(p.randinext(0,32766), "XAR_MYLANTIS_CITY_HOL_PORTAL")
-            pe = pe .. "_" .. string.format("%x%x%x", pos.x, pos.y, pos.z) .. "_889" -- i dont feel like randomly choosing one of the 5, its so much work for not that much. 
+            local phoneext = ""
+            if(discduo < 0.1) then
+                phoneext = "_987"
+            elseif(discduo < 0.2) then
+                phoneext = "_877"
+            elseif(discduo < 0.3) then
+                phoneext = "_787"
+            elseif(discduo < 0.4) then
+                phoneext = "_897"
+            else
+                phoneext = "_889"
+            end
+            pe = pe .. "_" .. string.format("%x%x%x", pos.x, pos.y, pos.z) .. phoneext 
             ga_tele(pe,std.block_center(std.vec(7,7,7)))
             ga_set_s("community_xar_fbw.ryf.next_target","hellpatch")
         else
@@ -286,6 +309,35 @@ function p.fromthetop()
         end
         return true
     elseif(next_target == "hellpatch") then
+        if(discduo < 0.4) then
+            local phoneext = ""
+            if(discduo < 0.08) then
+                phoneext = "_987"
+            elseif(discduo < 0.16) then
+                phoneext = "_877"
+            elseif(discduo < 0.24) then
+                phoneext = "_787"
+            elseif(discduo < 0.32) then
+                phoneext = "_897"
+            else
+                phoneext = "_889"
+            end
+            local pe = path
+            pe = pe .. phoneext 
+            ga_tele(pe,std.block_center(std.vec(7,7,7)))
+        elseif(discduo<0.45) then
+            --0.05/0.6 -> 1/12
+            ga_set_s("community_xar_fbw.ryf.next_target","dandelions")
+            return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_DANDELIONS")
+        else
+            ga_set_s("community_xar_fbw.ryf.next_target","hell")
+            p.advance_to_pos(8,8,3)
+        end
+        return true
+    elseif(next_target == "dandelions") then
+        ga_set_b("community_xar_fbw.ryf.started",false)
+        return false
+    elseif(next_target == "hell") then
         ga_set_b("community_xar_fbw.ryf.started",false)
         return false
     elseif(next_target == "dhouse") then
@@ -294,18 +346,32 @@ function p.fromthetop()
             return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_YING_FOREST")
         end
         return true
-    elseif(next_target == "deepspacedescendverifier") then
+    elseif(next_target == "spacemiddescendverifier") then
         if(chunk_bt == "XAR_SPACE_MID") then
             ga_set_s("community_xar_fbw.ryf.next_target","spacemid")
+        elseif(chunk_bt == "XAR_ASTEROID_GOLD_MEDIUM") then
+            --rare
+            --CHANGE?
+            ga_set_s("community_xar_fbw.ryf.next_target","bulk")
+            p.advance_to_pos(7,7,8)
         else
             ga_print("HOOLIGAN IN QUESTION" .. chunk_bt)
             ga_console_print("HOOLIGAN IN QUESTION" .. chunk_bt)
             --what goes around comes around. Deep space. 
-            ga_tele("777",std.block_center(std.vec(7,7,7)))
-            ga_set_s("community_xar_fbw.ryf.next_target","deepspace")
+            if(discduo<0.2) then
+                ga_tele("777",std.block_center(std.vec(7,7,7)))
+                ga_set_s("community_xar_fbw.ryf.next_target","deepspace")
+            else
+                ga_tele("777_777_777",std.block_center(std.vec(7,7,7)))
+                ga_set_s("community_xar_fbw.ryf.next_target","nearspace")
+            end
         end
         return true
     elseif(next_target == "spacemid") then
+        --temp
+        ga_set_b("community_xar_fbw.ryf.started",false)
+        return false
+    elseif(next_target == "bulk") then
         --temp
         ga_set_b("community_xar_fbw.ryf.started",false)
         return false
