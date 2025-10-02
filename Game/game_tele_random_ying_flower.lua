@@ -48,13 +48,14 @@ function p.advance_to_random_pos_search_maybe_descend(seed, goal_bt)
         --if its false... rip boso
         --we must be careful that this never happens when we don't want it to.
         --it is okay under certain conditions, because if not found, we just try something else.
+        ga_console_print("random descend search failed")
         ga_print("THIS SHOULD NEVER PRINT, IF IT DOES, WE ARE [[BAKED]]")  
         return false
     end
 end
 
 --only a checker
-function p.advance_to_random_pos_search_maybe(seed, goal_bt)
+function p.chunk_bt_random_search_maybe(seed, goal_bt)
     local path = ga_get_viewer_path()
     local chunk_id = ga_get_viewer_chunk_id()
     local data = ga_search_for_bt_in_chunk_random(seed, chunk_id, goal_bt)
@@ -154,9 +155,9 @@ function p.fromthetop()
         end
 
         --put one off tests here
-        ga_tele("777_777_777",std.block_center(std.vec(7,7,7)))
-        ga_set_s("community_xar_fbw.ryf.next_target","nearspace")
-
+        --currently we are locked in here... in a playable state. This means there is no way to get stuck not inside a ying flower
+        ga_tele("777_77f_7bc_222_dd7_080_080",std.block_center(std.vec(7,7,7)))
+        ga_set_s("community_xar_fbw.ryf.next_target","quicksandgrass11")
         return true
     end
 
@@ -196,16 +197,18 @@ function p.fromthetop()
         return true
     elseif(next_target == "yingforest") then
         --more?
+        --unremembered tower descend soon.
         if(discduo <= 0.06) then
             ga_console_print("descending orange")
             ga_set_s("community_xar_fbw.ryf.next_target","orangeyf1")
         elseif(discduo < 0.18) then
-            local data = p.advance_to_random_pos_search_maybe(p.randinext(0,32766), "XAR_YING_FOREST_DEEP_HANGING")
+            local data = p.chunk_bt_random_search_maybe(p.randinext(0,32766), "XAR_YING_FOREST_DEEP_HANGING")
             if(data.is_valid) then
                 local pos = data.value
                 local pe = path
                 --we could do another discduo choice here to split between 0.02 and 0.27, whether the flower or the moon. Currently, its the moon. 
                 pe = pe .. "_" .. string.format("%x%x%x", pos.x, pos.y, pos.z) .. "_77a_773"
+                ga_tele(pe,std.block_center(std.vec(7,7,7)))    
                 ga_set_s("community_xar_fbw.ryf.next_target","taumoon")
             end
         else
@@ -220,14 +223,110 @@ function p.fromthetop()
         --finished
         if(discduo < 0.5) then
             --XAR_CUBE1_TREASURE
-            p.advance_to_random_pos_search_maybe_descend(0, "XAR_CUBE1_TREASURE")
+            p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_CUBE1_TREASURE")
             ga_set_s("community_xar_fbw.ryf.next_target","cube1treasure")
         else
             --2,2,2, "XAR_CUBE1_CORNER_ROOM
             local pe = path
             pe = pe .. "_222_dd7"
             ga_tele(pe,std.block_center(std.vec(7,7,7)))    
-            ga_set_s("community_xar_fbw.ryf.next_target","smallblack")
+            ga_set_s("community_xar_fbw.ryf.next_target","healthtower")
+        end
+        return true
+    elseif(next_target == "healthtower") then
+        --more? (apple tree, cardboard box)
+        if(discduo <=1 ) then
+            p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_QUICKSAND_GRASS_1")
+            ga_set_s("community_xar_fbw.ryf.next_target","quicksandgrass")
+        else
+        end
+        return true
+    elseif(next_target == "quicksandgrass") then
+        --more? help block, every chunk also has quicksand grass 11
+        local pe = path
+        for i = 1, 9 do
+            pe = pe .. "_" .. string.format("%02x", p.randinext(0,255)) .. "0"
+        end
+        ga_tele(pe,std.block_center(std.vec(7,7,7)))
+        ga_set_s("community_xar_fbw.ryf.next_target","purplehouseverifier")
+        return true
+    elseif(next_target == "purplehouseverifier") then
+        local pe = path
+        if(chunk_bt == "XAR_QUICKSAND_GRASS_10") then
+            local data = p.chunk_bt_random_search_maybe(p.randinext(0,32766), "XAR_QUICKSAND_GRASS_HOUSE")
+            if(data.is_valid) then  
+                local pos = data.value
+                pe = pe .. "_" .. string.format("%x%x%x", pos.x, pos.y, pos.z) .. "_5e5"
+                ga_set_s("community_xar_fbw.ryf.next_target","jumboyellow")
+                ga_tele(pe,std.vec(7,7,7))
+                return true
+            end
+        end
+        if(discduo < 0.006 and chunk_bt == "XAR_QUICKSAND_GRASS_11") then
+            ga_console_print("i cant believe this has happened")
+            ga_print("i cant believe this has happened")
+            p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_QUICKSAND_GRASS_11")
+            ga_set_s("community_xar_fbw.ryf.next_target","quicksandgrass11")
+            return true
+        end
+        pe = string.sub(pe,1,-37)
+        ga_tele(pe,std.block_center(std.vec(7,7,7)))
+        ga_print(chunk_bt)
+        ga_print("zawurdo")
+        ga_set_s("community_xar_fbw.ryf.next_target","quicksandgrass")
+        return true
+    elseif(next_target == "jumboyellow") then
+        ga_console_print("descending yingforest")
+        ga_set_s("community_xar_fbw.ryf.next_target","yingforest")
+        return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_YING_FOREST")
+    elseif(next_target == "quicksandgrass11") then
+        local data = p.chunk_bt_random_search_maybe(p.randinext(0,32766), "XAR_QUICKSAND_GRASS_BASEMENT_BELOW")
+        if(data.is_valid) then  
+            local pos = data.value
+            local pe = path
+            pe = pe .. "_" .. string.format("%x%x%x", pos.x, pos.y, pos.z) .. "_778"
+            ga_tele(pe,std.vec(7,7,7))
+            ga_set_s("community_xar_fbw.ryf.next_target","basement")
+            return true
+        else
+            return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_QUICKSAND_GRASS_11")
+        end
+        --idk man
+        return true
+    elseif(next_target == "basement") then
+        --done
+        if(discduo <= 0.52) then
+            ga_set_s("community_xar_fbw.ryf.next_target","appletreegeneral")
+            return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_APPLE_TREE_GREEN")
+        else
+            ga_set_s("community_xar_fbw.ryf.next_target","appletreegeneral")
+            return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_APPLE_TREE_YELLOW")
+        end
+    elseif(next_target == "appletreegeneral") then
+        if(discduo <= 0.7) then
+            ga_set_s("community_xar_fbw.ryf.next_target","appletreebranchgeneral")
+            if(chunk_bt == "XAR_APPLE_TREE_GREEN") then
+                return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_APPLE_TREE_BRANCH_1_GREEN")
+            elseif(chunk_bt == "XAR_APPLE_TREE_YELLOW") then
+                return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_APPLE_TREE_BRANCH_1_YELLOW")
+            else
+                return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_APPLE_TREE_BRANCH_1_RED")
+            end
+        else
+            p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_QUICKSAND_GRASS_1")
+            ga_set_s("community_xar_fbw.ryf.next_target","quicksandgrass")
+            return true
+        end
+        return true
+    elseif(next_target == "appletreebranchgeneral") then
+        ga_set_s("community_xar_fbw.ryf.next_target","smallwhite")
+        return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_SMALL_WHITE_FLOWER")
+    elseif(next_target == "smallwhite") then
+        --more?
+        if(discduo <=1 ) then
+            p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_QUICKSAND_GRASS_1")
+            ga_set_s("community_xar_fbw.ryf.next_target","quicksandgrass")
+        else
         end
         return true
     elseif(next_target == "deepspace") then
@@ -284,7 +383,7 @@ function p.fromthetop()
     elseif(next_target == "holside") then
         if(discduo < 0.5) then
             local pe = path
-            local pos = p.advance_to_random_pos_search_maybe(p.randinext(0,32766), "XAR_MYLANTIS_CITY_HOL_PORTAL")
+            local pos = p.chunk_bt_random_search_maybe(p.randinext(0,32766), "XAR_MYLANTIS_CITY_HOL_PORTAL").value
             local phoneext = ""
             if(discduo < 0.1) then
                 phoneext = "_987"
@@ -302,7 +401,7 @@ function p.fromthetop()
             ga_set_s("community_xar_fbw.ryf.next_target","hellpatch")
         else
             local pe = path
-            local pos = p.advance_to_random_pos_search_maybe(p.randinext(0,32766), "XAR_MYLANTIS_CITY_DANS_HOUSE_TOP")
+            local pos = p.chunk_bt_random_search_maybe(p.randinext(0,32766), "XAR_MYLANTIS_CITY_DANS_HOUSE_TOP").value
             pe = pe .. "_" .. string.format("%x%x%x", pos.x, pos.y, pos.z) .. "_778"
             ga_tele(pe,std.block_center(std.vec(7,7,7)))
             ga_set_s("community_xar_fbw.ryf.next_target","dhouse")
@@ -381,11 +480,18 @@ function p.fromthetop()
         ga_set_s("community_xar_fbw.ryf.next_target","smallblack")
         return true
     elseif(next_target == "smallblack") then
-        --temp
-        ga_set_b("community_xar_fbw.ryf.started",false)
-        return false
+        --more? (apple tree, cardboard box)
+        if(discduo <=1 ) then
+            p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_QUICKSAND_GRASS_11")
+            ga_set_s("community_xar_fbw.ryf.next_target","quicksandgrass11")
+        else
+        end
+        return true
     elseif(next_target == "orangeyf1" or next_target == "orangeyf3" or next_target == "orangeyf5" or next_target == "orangeyf6") then
-        p.advance_to_random_pos_search_restrict_range("XAR_YING_FOREST", 0, 0, 0, 15, 15, 0)
+        if(not p.advance_to_random_pos_search_restrict_range("XAR_YING_FOREST", 0, 0, 0, 15, 15, 0)) then
+            ga_set_s("community_xar_fbw.ryf.next_target", "orangeyf1")
+            return true
+        end
         local str = next_target
         local new_str = str:gsub("(%d+)$", function(n)
             return tostring(tonumber(n) + 1)
@@ -393,7 +499,10 @@ function p.fromthetop()
         ga_set_s("community_xar_fbw.ryf.next_target", new_str)
         return true
     elseif(next_target == "orangeyf2" or next_target == "orangeyf4") then
-        p.advance_to_random_pos_search_restrict_range("XAR_YING_FOREST", 0, 0, 1, 15, 15, 15)
+        if(not p.advance_to_random_pos_search_restrict_range("XAR_YING_FOREST", 0, 0, 1, 15, 15, 15)) then
+            ga_set_s("community_xar_fbw.ryf.next_target", "orangeyf1")
+            return true
+        end
         local str = next_target
         local new_str = str:gsub("(%d+)$", function(n)
             return tostring(tonumber(n) + 1)
@@ -401,8 +510,12 @@ function p.fromthetop()
         ga_set_s("community_xar_fbw.ryf.next_target", new_str)
         return true
     elseif(next_target == "orangeyf7") then
+        if(not p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_ORANGE")) then
+            ga_set_s("community_xar_fbw.ryf.next_target", "orangeyf1")
+            return true
+        end
         ga_set_s("community_xar_fbw.ryf.next_target", "orange")
-        return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_ORANGE")
+        return true
     elseif(next_target == "orange") then
         --more stuff here later
         if(discduo <=1) then
@@ -412,7 +525,7 @@ function p.fromthetop()
         return true
     elseif(next_target == "stoneyair") then
         if(discduo <=1) then
-            local data = p.advance_to_random_pos_search_maybe(p.randinext(0,32766), "XAR_YING_FLOWER")
+            local data = p.chunk_bt_random_search_maybe(p.randinext(0,32766), "XAR_YING_FLOWER")
             if(data.is_valid) then
                 ga_set_s("community_xar_fbw.ryf.next_target","yingflower")
                 p.advance_to_pos(data.value.x,data.value.y,data.value.z)
@@ -421,6 +534,7 @@ function p.fromthetop()
         end
         return p.advance_to_random_pos_search_maybe_descend(p.randinext(0,32766), "XAR_STONEY_AIR")
     else
+        ga_console_print("THIS SHOULD NEVER PRINT, IF IT DOES, WE ARE [[BROILED AND OR BAKED]]")
         ga_print("THIS SHOULD NEVER PRINT, IF IT DOES, WE ARE [[BROILED AND OR BAKED]]")
         return false
     end

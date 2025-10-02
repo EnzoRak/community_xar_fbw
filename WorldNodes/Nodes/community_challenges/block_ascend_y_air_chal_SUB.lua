@@ -17,8 +17,8 @@ function p.__main()
         if(depth>=25) then
             if(randf()<0.3) then
                 add_bent_s(7,7,7,"bent_base_txt","Of Course there is a strategy to this. Place Long Distance Markers and set them as your Tracking Marker every time you grow. This way if you shrink farther away, you can always find the way back, because after using the yellow ring once, it transforms after taking effect so you don't have to remember it again. ")
-                add_bent(7,7,6,"bent_gold_10")
-                add_bent(7,7,8,"bent_gold_10")
+                add_bent(7,7,6,"bent_gold_5")
+                add_bent(7,7,8,"bent_gold_5")
             end
         end
     else

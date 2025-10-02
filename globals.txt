@@ -5,3 +5,4 @@ b community_xar_fbw.ryf.enabled false
 s community_xar_fbw.ryf.magic_string ""
 b community_xar_fbw.ryf.started false
 s community_xar_fbw.ryf.next_target ""
+i community_xar_fbw.banked_gold 0
