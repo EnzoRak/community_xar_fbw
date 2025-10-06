@@ -1,7 +1,22 @@
 --Should be called within the die function of a ment.
 function p.main(inst_id)
-    local ment_type = ga_ment_get_type(inst_id)
+    local mod_name = ga_ment_get_type(inst_id)
+    local func_name = "on_die"
+    if( _G[mod_name] and
+        _G[mod_name][func_name] )
+    then
+        --It has a custom die function.
+        _G[mod_name][func_name](inst_id)
+    else
+        --Using the default die function.
+        p.default(inst_id)
+    end
+end
 
+--Should be called within the die function of a ment.
+function p.default(inst_id)
+    local ment_type = ga_ment_get_type(inst_id)
+    
     if ga_ment_var_exists(inst_id, "identity_str") and win_fractalbase.map[ga_ment_get_static_s(ment_type, "identity_str")] then
         local discovered = ga_get_s("community_xar_fbw.fractalbase.enemies_discovered")
         local idx = win_fractalbase.map[ga_ment_get_static_s(ment_type, "identity_str")]

@@ -1,0 +1,1 @@
+--generates a 2d maze that covers the surface of a cube. 

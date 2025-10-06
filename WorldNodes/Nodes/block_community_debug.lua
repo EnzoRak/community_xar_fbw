@@ -20,6 +20,7 @@ function p.__main()
     add_bent(1,14,13, "bent_debug_spawn_block")
 
     -- Put your new blocks here!
+    --can we have a ledge kinda thing just like the xar debug room, these invisible blocks dont have floors. 
     local blocks = {
         "community_debug",
         "galaxy_blackhole",
@@ -27,6 +28,7 @@ function p.__main()
         "dirty_air_case",
         "pink_flower",
         "alphabet_flower"
+        "sunflower",
     }
     
     for j = 1, #blocks do
@@ -36,5 +38,7 @@ function p.__main()
         local y = 2*(math.floor(i/6)%6+1)
         local z = 2*(math.floor(i/36)+1)
         set_pos(x,y,z,block)
+        --bug fix. Apparently, the sunflower's call to create_xar_chunk("XAR_SMALL_YELLOW_FLOWER") requires there to be a block underneath, in this specific case, for chunk generation. Litterally have no idea why this is the case now. Damn Daniel. An interesting note, the small yellow flower no longer generates the blocks structure, but still generates the air when this happens. However, since the floor has to be a XAR block, I decided XAR_SOLID_BORING was good enough.   
+        set_pos(x,y,z-1,"XAR_SOLID_BORING")
     end
 end

@@ -1,3 +1,8 @@
 b community_xar_fbw.showmetoggle false
 b community_xar_fbw.pink_ascended false
 s community_xar_fbw.fractalbase.enemies_discovered ""
+b community_xar_fbw.ryf.enabled false
+s community_xar_fbw.ryf.magic_string ""
+b community_xar_fbw.ryf.started false
+s community_xar_fbw.ryf.next_target ""
+i community_xar_fbw.banked_gold 0
