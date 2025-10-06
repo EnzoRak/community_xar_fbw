@@ -11,6 +11,7 @@ p.enemy_data = { -- a big list of data, maybe make a better system?
     -- <identity_str> MUST be identical to the identity string of the enemy
     {"Goblin", {32, 1, PROJ}, "its a gobin", "gobin weak how you die", "Long ago, they had a war with the imps in the Ying World.  The goblins banished the imps from the trees and into these cement cubes. The fractal air is filled with these prisons. When the imps were banished, however, they took much of the gold from the Ying World with them.  In other parts of the fractal-verse, goblins and imps live peacefully together, but still only imps have gold."},
     {"Imp", {32, 1, PROJ}, "its a ip", "ip weak how you die", "Long ago, they had a war with the goblins in the Ying World.  The goblins banished the imps from the trees and into these cement cubes. The fractal air is filled with these prisons. When the imps were banished, however, they took much of the gold from the Ying World with them.  In other parts of the fractal-verse, goblins and imps live peacefully together, but still only imps have gold."},
+    {"Inner Core", {100000000, 300, HIT}, "The ^x00ff00Inner Core^! guards a ^x0000ffKey to the Universe^!", "ok iner kinda strong", "th ey have appearedd in every"},
 }
 
 p.map = {} -- performance reasons.
@@ -21,6 +22,8 @@ for i = 1,#p.enemy_data do p.map[p.enemy_data[i][1]] = i end
 local cur_search_str = ""
 
 local enemy_options = {}
+
+local num_discovered = 0
 
 local tween = 0
 
@@ -36,8 +39,12 @@ function p.list(wid, u)
 
         enemy_options = {}
 
+        num_discovered = 0
         for i = 1,#p.enemy_data do
-            if discovered:sub(i,i) ~= "0" and string.find(p.enemy_data[i][1], cur_search_str) then enemy_options[#enemy_options+1] = p.enemy_data[i][1] end
+            if discovered:sub(i,i) ~= "0" then
+                num_discovered = num_discovered + 1
+                if string.find(p.enemy_data[i][1], cur_search_str) then enemy_options[#enemy_options+1] = p.enemy_data[i][1] end
+            end
         end
 
         local min_y = 0.15
@@ -89,6 +96,15 @@ function p.__render(wid)
     ga_win_set_background(wid, std.vec(0.0, 0.0, 0.0), 0.95)
 
     game_win_top_bar.create_stats_buttons_bot_line(wid)
+
+    ga_win_set_char_size(wid, 0.01, 0.02)
+
+    if menu == 1 then
+        local frac = num_discovered/#p.enemy_data
+        ga_win_txt(wid, 0, 0.02, num_discovered .. "/" .. #p.enemy_data .. " (" .. math.floor(frac*1000)/10 .. "%)")
+        ga_win_quad_color(wid, 0, 0, 1, 0.02, std.vec(0,0,0))
+        ga_win_quad_color(wid, 0, 0, frac, 0.02, std.vec(0,1,0))
+    end
 end
 
 function p.__process_input(wid)
