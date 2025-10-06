@@ -27,6 +27,7 @@ function p.__main()
         "gl_cube",
         "dirty_air_case",
         "pink_flower",
+        "alphabet_flower"
         "sunflower",
     }
     

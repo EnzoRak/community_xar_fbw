@@ -1,0 +1,201 @@
+function p.__get_is_solid() return true end
+function p.__get_tex() return "block_concrete_border" end
+
+function p.__main()
+    set_default_block("XAR_SOLID_BORING")
+    srand(seed_normal())
+    local blocks = {
+        "SOLID_BORING"
+        ,"SOLID_BORING_AMMO"
+        ,"SOLID_BORING_ARCADE"
+        ,"SOLID_BORING_BELLE_ROSETTE"
+        ,"SOLID_BORING_BLACK"
+        ,"SOLID_BORING_BLACKBERRY_MEDIUM"
+        ,"SOLID_BORING_BLUE"
+        ,"SOLID_BORING_BLUE_BORDER"
+        ,"SOLID_BORING_BRIGHT_GREEN_BORDER"
+        ,"SOLID_BORING_CARDBOARD_BOX"
+        ,"SOLID_BORING_CONCRETE_BLUE_BORDER"
+        ,"SOLID_BORING_CONCRETE_BLUE_X"
+        ,"SOLID_BORING_CONCRETE_BROWN_BORDER"
+        ,"SOLID_BORING_CONCRETE_BROWN_ORANGE_BORDER"
+        ,"SOLID_BORING_CONCRETE_BROWN_RED_BORDER"
+        ,"SOLID_BORING_CONCRETE_CHECKER_BLUE"
+        ,"SOLID_BORING_CONCRETE_CHECKER_BLUE_RED"
+        ,"SOLID_BORING_CONCRETE_CHECKER_BLUE_YELLOW"
+        ,"SOLID_BORING_CONCRETE_CHECKER_BROWN"
+        ,"SOLID_BORING_CONCRETE_CHECKER_DARK"
+        ,"SOLID_BORING_CONCRETE_CHECKER_GREEN"
+        ,"SOLID_BORING_CONCRETE_CHECKER_RED"
+        ,"SOLID_BORING_CONCRETE_CHECKER_YELLOW"
+        ,"SOLID_BORING_CONCRETE_DARK_DOT"
+        ,"SOLID_BORING_CONCRETE_ORANGE_BORDER"
+        ,"SOLID_BORING_CONCRETE_ORANGE_DIAG"
+        ,"SOLID_BORING_CONCRETE_ORANGE_X"
+        ,"SOLID_BORING_CONCRETE_PURPLE_BORDER"
+        ,"SOLID_BORING_CONCRETE_PURPLE_X"
+        ,"SOLID_BORING_CONCRETE_RED_BORDER"
+        ,"SOLID_BORING_CONCRETE_RED_X"
+        ,"SOLID_BORING_CONCRETE_WHITE_BORDER"
+        ,"SOLID_BORING_CONCRETE_WHITE_X"
+        ,"SOLID_BORING_CONCRETE_YELLOW_BORDER"
+        ,"SOLID_BORING_CONCRETE_YELLOW_X"
+        ,"SOLID_BORING_DARK_CONCRETE_BLUE_BORDER"
+        ,"SOLID_BORING_DARK_CONCRETE_GREEN_BORDER"
+        ,"SOLID_BORING_DARK_CONCRETE_ORANGE_BORDER"
+        ,"SOLID_BORING_DARK_CONCRETE_PURPLE_BORDER"
+        ,"SOLID_BORING_DARK_CONCRETE_RED_BORDER"
+        ,"SOLID_BORING_DARK_GREEN_BORDER"
+        ,"SOLID_BORING_DARK_GREEN_X"
+        ,"SOLID_BORING_DECO_1"
+        ,"SOLID_BORING_DECO_1_BLUE_1"
+        ,"SOLID_BORING_DECO_1_GREEN_1"
+        ,"SOLID_BORING_DECO_1_GREEN_2"
+        ,"SOLID_BORING_DECO_1_PURPLE_1"
+        ,"SOLID_BORING_DECO_1_PURPLE_2"
+        ,"SOLID_BORING_DECO_1_YELLOW_1"
+        ,"SOLID_BORING_EXIT"
+        ,"SOLID_BORING_EXPANDER"
+        ,"SOLID_BORING_GATO_GREEN"
+        ,"SOLID_BORING_GATO_LIGHT_BLUE"
+        ,"SOLID_BORING_GATO_PURPLE"
+        ,"SOLID_BORING_GATO_YELLOW"
+        ,"SOLID_BORING_GREEN"
+        ,"SOLID_BORING_GREEN_BLACK_STRIPED"
+        ,"SOLID_BORING_HELL"
+        ,"SOLID_BORING_I1_GREEN"
+        ,"SOLID_BORING_I1_RED"
+        ,"SOLID_BORING_I2_GREEN"
+        ,"SOLID_BORING_I2_RED"
+        ,"SOLID_BORING_I2_YELLOW"
+        ,"SOLID_BORING_I3_GREEN"
+        ,"SOLID_BORING_I3_YELLOW"
+        ,"SOLID_BORING_INFINITY_GREEN"
+        ,"SOLID_BORING_INFINITY_RED"
+        ,"SOLID_BORING_INFINITY_YELLOW"
+        ,"SOLID_BORING_INFO"
+        ,"SOLID_BORING_KEITH"
+        ,"SOLID_BORING_LETTER_A"
+        ,"SOLID_BORING_LETTER_B"
+        ,"SOLID_BORING_LETTER_C"
+        ,"SOLID_BORING_LETTER_D"
+        ,"SOLID_BORING_LETTER_E"
+        ,"SOLID_BORING_LETTER_F"
+        ,"SOLID_BORING_LETTER_G"
+        ,"SOLID_BORING_LETTER_H"
+        ,"SOLID_BORING_LETTER_I"
+        ,"SOLID_BORING_LETTER_J"
+        ,"SOLID_BORING_LETTER_K"
+        ,"SOLID_BORING_LETTER_L"
+        ,"SOLID_BORING_LETTER_M"
+        ,"SOLID_BORING_LETTER_N"
+        ,"SOLID_BORING_LETTER_O"
+        ,"SOLID_BORING_LETTER_P"
+        ,"SOLID_BORING_LETTER_Q"
+        ,"SOLID_BORING_LETTER_R"
+        ,"SOLID_BORING_LETTER_S"
+        ,"SOLID_BORING_LETTER_T"
+        ,"SOLID_BORING_LETTER_U"
+        ,"SOLID_BORING_LETTER_V"
+        ,"SOLID_BORING_LETTER_W"
+        ,"SOLID_BORING_LETTER_X"
+        ,"SOLID_BORING_LETTER_Y"
+        ,"SOLID_BORING_LETTER_Z"
+        ,"SOLID_BORING_LIGHTHOUSE"
+        ,"SOLID_BORING_LIGHT_BLUE_BORDER"
+        ,"SOLID_BORING_LIGHT_GREEN_BORDER"
+        ,"SOLID_BORING_MAP"
+        ,"SOLID_BORING_MAZE"
+        ,"SOLID_BORING_MUSHROOM"
+        ,"SOLID_BORING_MUSHROOM_BLACK"
+        ,"SOLID_BORING_MUSHROOM_RED"
+        ,"SOLID_BORING_MUSHROOM_YELLOW"
+        ,"SOLID_BORING_NUM_0"
+        ,"SOLID_BORING_NUM_1"
+        ,"SOLID_BORING_NUM_2"
+        ,"SOLID_BORING_NUM_3"
+        ,"SOLID_BORING_NUM_4"
+        ,"SOLID_BORING_NUM_5"
+        ,"SOLID_BORING_NUM_6"
+        ,"SOLID_BORING_NUM_7"
+        ,"SOLID_BORING_NUM_8"
+        ,"SOLID_BORING_NUM_9"
+        ,"SOLID_BORING_OMEGA"
+        ,"SOLID_BORING_PINK"
+        ,"SOLID_BORING_RADIOACTIVE"
+        ,"SOLID_BORING_RASPBERRY"
+        ,"SOLID_BORING_RED_0"
+        ,"SOLID_BORING_RED_1"
+        ,"SOLID_BORING_RED_BLACK_STRIPED"
+        ,"SOLID_BORING_SPIRAL"
+        ,"SOLID_BORING_STEEL_BOX"
+        ,"SOLID_BORING_TAU_CAVES"
+        ,"SOLID_BORING_TAU_MOON"
+        ,"SOLID_BORING_TOADSTOOL"
+        ,"SOLID_BORING_TUTORIAL"
+        ,"SOLID_BORING_UPGRADE_STATION"
+        ,"SOLID_BORING_WEAPON_MODE"
+        ,"SOLID_BORING_WHITE_BLACK_STRIPED"
+        ,"SOLID_BORING_WHITE_BOX"
+        ,"SOLID_BORING_WOOD_BOX"
+        ,"SOLID_BORING_X"
+        ,"SOLID_BORING_YELLOW_BLACK_STRIPED"
+        ,"SOLID_BORING_YING"
+        ,"SOLID_BORING_YOU_ARE_HERE"
+    }
+    for x = 0,15 do
+        for y = 0,15 do
+            for z = 0,14 do
+                set_pos(x,y,z,"XAR_"..blocks[randi(1,#blocks)])
+            end
+        end
+    end
+    maze_start()
+    for x = 0,15,2 do
+        for y = 0,15,2 do
+            for z = 0,14,2 do
+                maze_add_vertex(x,y,z)
+                set_pos(x,y,z,"alphabet_flower_maze_air")
+            end
+        end
+    end
+    for x = 0,15,2 do
+        for y = 0,15,2 do
+            for z = 0,14,2 do
+                if (x+2 <= 15) then
+                    maze_add_edge(x,y,z, x+2,y,z)
+                end
+                if (y+2 <= 15) then
+                    maze_add_edge(x,y,z, x,y+2,z)
+                end
+                if (z+2 <= 14) then
+                    maze_add_edge(x,y,z, x,y,z+2)
+                end
+            end
+        end
+    end
+    maze_end()
+    for x = 0,15,2 do
+        for y = 0,15,2 do
+            for z = 0,14,2 do
+                if (x+2 <= 15) then
+                    if maze_edge_open(x,y,z, x+2,y,z) then
+                    set_pos(x+1,y,z,"alphabet_flower_maze_air")
+                    end
+                end
+                if (y+2 <= 15) then
+                    if maze_edge_open(x,y,z, x,y+2,z) then
+                    set_pos(x,y+1,z,"alphabet_flower_maze_air")
+                    end
+                end
+                if (z+2 <= 14) then
+                    if maze_edge_open(x,y,z, x,y,z+2) then
+                    set_pos(x,y,z+1,"alphabet_flower_maze_air")
+                    end
+                end
+            end
+        end
+    end
+    create_rect("XAR_STOPPER",0,0,0,15,15,0)
+    set_pos(8,8,15,"XAR_STOPPER")
+end
