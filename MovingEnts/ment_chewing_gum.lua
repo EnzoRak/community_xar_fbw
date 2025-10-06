@@ -19,7 +19,7 @@ function p.__type_init(id)
     ia_ment_new_static_var_f(id, "xp_mod", 2) --High!
     ia_ment_new_static_var_f(id, "dps", 3000.0)
     ia_ment_new_static_var_b(id, "emp_immune", true) --Emp, but not freeze immune.
-    ia_ment_new_static_var_b(id, "freeze_immune", false) --Emp, but not freeze immune.
+    ia_ment_new_static_var_b(id, "freeze_immune", true) --Emp, but not freeze immune.
     local aura_radius = 8.0
     ia_ment_new_static_var_f(id, "damage_aura_duration", 1.0)
     ia_ment_new_var_f(id, "damage_aura_next_time", 0.0, 60.0)
@@ -60,8 +60,8 @@ function p.__on_alarm(inst_id, alarm_name)
     game_ment_alarms.monster(inst_id, alarm_name)
 end
 
-function p.__on_die(inst_id)
-    game_ment_die.main(inst_id)
+function p.on_die(inst_id)
+    game_ment_die.default(inst_id)
 end
 
 --need a custom aura behavior basicallly

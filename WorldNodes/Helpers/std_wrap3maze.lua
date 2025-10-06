@@ -1,0 +1,1 @@
+--2 or 3 dimensional mazes, but the kruskal algorithm allows for the 0 index to connect to the highest index. And then we just put a bunch of copies of the maze next to each other to finish the loop, and during generation we have a short tunneling function (here?) that will hollow out tunnels from the maze to the edge of the chunks. 

@@ -53,7 +53,7 @@ function p.__main()
                 if (y + 2 <= 14 and maze_edge_open(x, y, z, x, y + 2, z)) then
                     set_pos(x, y+1, z, "block_sunflower_maze_hallway")
                 end
-                if (z + 2 <= 15 and maze_edge_open(x, y, z, x, y, z + 2)) then
+                if (z + 2 <= 14 and maze_edge_open(x, y, z, x, y, z + 2)) then
                     set_pos(x, y, z+1, "block_sunflower_maze_hallway")
                 end
             end

@@ -71,7 +71,7 @@ function p.__on_alarm(inst_id, alarm_name)
     game_ment_alarms.monster(inst_id, alarm_name)
 end
 
-function p.__on_die(inst_id)
+function p.on_die(inst_id)
     --[[
     local function croptolevel(str, level)
         local cutoff = (4 * level) - 1
@@ -99,7 +99,7 @@ function p.__on_die(inst_id)
         --ga_console_print("welcome ohio")
         ga_block_change_perm(ga_ment_get_i(inst_id,"__start_level"), ga_ment_get_v(inst_id,"placementbp"),"block_sun_god_carcass")
     end
-    game_ment_die.main(inst_id)
+    game_ment_die.default(inst_id)
 end
 
 --since damage aura doesn't take the level damage mod into account 
