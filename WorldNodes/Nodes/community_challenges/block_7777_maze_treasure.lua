@@ -13,7 +13,7 @@ function p.__main()
     end
     add_bent_s(7,7,9,"bent_evaluator",
     [[
-        for i = 1, 2000 do
+        for i = 1, 500 do
             game_upgrades.spice()
             game_upgrades.health_max()
             game_upgrades.health_regen()

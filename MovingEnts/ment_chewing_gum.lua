@@ -101,7 +101,7 @@ function p.__on_update(inst_id, elapsed_time, elapsed_level_time)
         --damage aura damage is curved
         -- *0.5 to do half of that every damage_aura_duration = 1 seconds
         --however, if i damage raw, then the curve is not affected
-        damage = damage * 0.5
+        damage = damage * 0.1
         damage = math.floor(damage)
         local cur_level = ga_ment_get_i(inst_id, "__level")
         local lp = ga_ment_get_lp(inst_id)
