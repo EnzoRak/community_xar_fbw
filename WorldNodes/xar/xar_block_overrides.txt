@@ -6,3 +6,4 @@ XAR_DANDELIONS block_new_dandelions
 XAR_QUICKSAND_GRASS_11 block_new_quicksand_grass_11
 XAR_FANATIC_GRASS_BOTTOM block_new_fanatic_grass_bottom
 XAR_YING_TREE_INNER_BLUE_EXIT block_new_ying_tree_inner_blue_exit
+XAR_YW_0 block_new_yw0

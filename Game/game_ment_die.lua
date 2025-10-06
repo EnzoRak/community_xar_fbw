@@ -18,11 +18,21 @@ function p.main(inst_id)
     then
         local drop_bent = ga_ment_get_static_s(ment_type, "die_drop_bent")
         --
+        local drop_bent_param_i = 0
+        if( ga_ment_type_var_exists(ment_type, "die_drop_bent_param_i") ) then
+            drop_bent_param_i = ga_ment_get_static_i(ment_type, "die_drop_bent_param_i")
+        end
+        --
+        local drop_bent_param_s = ""
+        if( ga_ment_type_var_exists(ment_type, "die_drop_bent_param_s") ) then
+            drop_bent_param_s = ga_ment_get_static_s(ment_type, "die_drop_bent_param_s")
+        end
+        --
         local drop_extra_levels = 0
         if( ga_ment_type_var_exists(ment_type, "die_drop_extra_levels") ) then
             drop_extra_levels = ga_ment_get_static_i(ment_type, "die_drop_extra_levels")
         end
-        -- --
+        --
         local drop_box_allow = false
         if  ga_ment_type_var_exists(ment_type, "die_drop_box_allow") then
             drop_box_allow = ga_ment_get_static_b(ment_type, "die_drop_box_allow")
@@ -35,9 +45,15 @@ function p.main(inst_id)
         -- --
         local start_level = ga_ment_get_i(inst_id, "__start_level")
         local sllp = ga_ment_get_sllp(inst_id)
+
+        ga_print("game_ment_die.default: drop_bent_param_i = " .. tostring(drop_bent_param_i))
+        ga_print("game_ment_die.default: drop_bent_param_s = " .. tostring(drop_bent_param_s))
+
         game_ment_drop.drop_general(
             start_level, sllp,
             drop_bent,
+            drop_bent_param_i,
+            drop_bent_param_s,
             drop_extra_levels,
             drop_box_allow,
             drop_box_txt)
