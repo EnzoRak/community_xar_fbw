@@ -6,3 +6,4 @@ ment_chewing_gum _ chewinggum.jpg
 #was just public domain in 2022
 bent_magician _ RWS_Tarot_01_Magician.jpg
 code _ ent_code.png
+upgrade_pack _ upgrade_pack.png
