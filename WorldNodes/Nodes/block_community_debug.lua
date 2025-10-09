@@ -29,6 +29,7 @@ function p.__main()
         "pink_flower",
         "alphabet_flower",
         "sunflower",
+        "ywkey_entrance"
     }
     
     for j = 1, #blocks do
