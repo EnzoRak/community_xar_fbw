@@ -7,4 +7,6 @@ function p.__main()
     --time for gamer... oh yeah.
     --the sun microsystem. (TM?)
     --set_pos(8,8,8,"")
+    
+    --the fuck is this supposed to be
 end
