@@ -18,12 +18,15 @@ function p.__type_init(id)
     ia_ment_new_var_i(id, "health", 200000, 60.0)
     ia_ment_new_static_var_f(id, "xp_mod", 2) --High!
     ia_ment_new_static_var_f(id, "dps", 3000.0)
+    --this will be fixed eventually (skull)
     ia_ment_new_static_var_b(id, "emp_immune", true) --Emp, but not freeze immune.
     ia_ment_new_static_var_b(id, "freeze_immune", true) --Emp, but not freeze immune.
     local aura_radius = 8.0
     ia_ment_new_static_var_f(id, "damage_aura_duration", 1.0)
     ia_ment_new_var_f(id, "damage_aura_next_time", 0.0, 60.0)
     ia_ment_new_static_var_f(id, "damage_aura_radius", aura_radius)
+
+    ia_ment_new_var_f_perm(id, "damage_fraction", 0.5) -- change this on initialization using ment_set? 
     --[[
     ia_ment_new_static_var_b(id, "damage_aura_has", true)
     ia_ment_new_static_var_i(id, "damage_aura_damage", 0)
@@ -99,9 +102,22 @@ function p.__on_update(inst_id, elapsed_time, elapsed_level_time)
         
         local damage = 0 + ga_get_i("xar.player.health.amount") + ga_get_i("xar.player.armor.amount") + ga_get_i("xar.player.shield.amount")
         --damage aura damage is curved
-        -- *0.5 to do half of that every damage_aura_duration = 1 seconds
+        --splitting among all the rats nearby
         --however, if i damage raw, then the curve is not affected
-        damage = damage * 0.1
+        local vlevel = ga_get_viewer_level() 
+        local list = ga_ment_sphere_query(
+            vlevel, vlevel, vlevel,
+            ga_get_viewer_lp(vlevel), ga_ment_get_f(inst_id, "damage_aura_radius"))
+        local gumsnearby = 0
+        for k,v in pairs(list) do
+            local ment_inst_id = v.inst_id
+            if(ga_ment_get_type(ment_inst_id) == "ment_chewing_gum") then
+                gumsnearby = gumsnearby + 1
+                --ga_console_print(gumsnearby .. " gums nearby")
+            end
+        end
+
+        damage = damage * ga_ment_get_f(inst_id, "damage_fraction") / gumsnearby
         damage = math.floor(damage)
         local cur_level = ga_ment_get_i(inst_id, "__level")
         local lp = ga_ment_get_lp(inst_id)
