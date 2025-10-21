@@ -14,3 +14,4 @@ XAR_MOSSY_AIR block_new_mossy_air
 XAR_MOSSY_AIR_TOP block_new_mossy_air_top
 XAR_YW_0 block_new_yw0
 XAR_MYLANTIS block_new_myl
+XAR_SPACE_ROOT block_new_space_root

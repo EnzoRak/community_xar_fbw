@@ -1,10 +1,10 @@
 --thanks to S3ZM4L01N (iamnot.a.skinwalker) for this idea
 --should replace the 1 hour sleep bent here? to intercept and sometimes randomly teleport to dream dimension, depending on the number of hours difference between game time and play time. The longer the interval, the more likely to teleport. (This also nerfs sleeping for farming :))
 
---I also wanted to implement the Yellow Rings idea from L9M2 (l9m2), except slightly differently. It first says Grow/Shrink when you use it, and only after you use it CHANGE into a different ring. 
+--done
 
 --Additionally, a 2 sided fractal. Basically, there is no floor solid block, its all part of one fractal, the top and bottom (but they are two seperate chunks, a top and bottom layer) It should be solid at first, and then its just a copy of itself. Maybe there can be tunnels between the two areas for some sort of puzzle?
-    --Im not sure if both the top and bottom should have their own "floor", or if only needed on one side...
+    --Im not sure if both the top and bottom should have their own "floor", or if only needed on one side... wip
 
 --6x 2d maze, on the surface of a cube. (A cube surface maze)
 
@@ -28,7 +28,11 @@
 
 --from room 15/15, a self replecating block, that creates ments around it that creates more ments, and the old ments "transform" into blocks. Once a chunk is completely filled of this block, it transforms the entire chunk into a copy of the block at the larger level, which should also keep spreading. Eventually, the entire world can be destryed, but it would be funny, and also we can make it so that this block (which is actually a ment) can only be in deep areas of the world. 
 
---a chunk with every chunk that has a unique secret trophy in it (because there is no secret trophy bent, you must place the specific xar chunk with the said trophy to get the specific trophy in it.)
+--this one, done, with the command
+
+--prestiege system, in which all your waypoints are cleared (Except for EMERGENCY), but playerdata is stored somewhere (except for waypoints, but upgrades are stored), and some additional ways to get buffs are added
+    --top.__reboot_game() is very interesting.
+    --such as Even Lower Drag, instant movement, upgrade effect increase, reduced weapon damage curve, more areas
 function p.__get_is_solid() return true end
 function p.__get_tex() return "block_bedroom" end
 
