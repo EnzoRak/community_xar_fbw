@@ -39,20 +39,17 @@ function p.__main()
     set_pos(14,11,14, "XAR_TORONTO_MAZE_ANTI_PLUG_LARGE")
     set_pos(13,11,14, "block_ascend_y_air_chal") --grow out of a random chance grow shrink ring collection...
 
-    --add your own challenge?
-    --[=====[    
     set_pos(14,12,14, "XAR_EMPTY_BORING")
     set_pos(14,13,14, "XAR_EMPTY_BORING")
-    set_pos(13,13,14, "XAR_EMPTY_BORING")
-    
+    set_pos(13,13,14, "trials_chal")
+    --add your own challenge?
+    --[=====[    
     set_pos(14,13,14, "XAR_EMPTY_BORING")
     set_pos(14,14,14, "XAR_EMPTY_BORING")
-    set_pos(13,14,14, "XAR_EMPTY_BORING")
     
     --oh we going down now? nah back.
     set_pos(14,14,13, "XAR_EMPTY_BORING")
-    set_pos(14,14,12, "XAR_EMPTY_BORING")
-    set_pos(13,14,12, "XAR_EMPTY_BORING")
+    set_pos(13,14,13, "XAR_EMPTY_BORING")
     --]=====]
 
 end
