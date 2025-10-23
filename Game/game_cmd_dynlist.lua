@@ -31,11 +31,14 @@ function p.handler(str)
     end
 
     -- Initialize dyn path
+    if(ga_dyn_exists(str1)== true) then
+        p.printnodes(str1, 0, recursive)
+        return
+    end
+    --else
     ga_dyn_init_s(str1, "test69")
-
     -- Print nodes
     p.printnodes(str1, 0, recursive)
-
     if ga_dyn_get_s(str1) == "test69" then
         ga_dyn_remove(str1)
     end
