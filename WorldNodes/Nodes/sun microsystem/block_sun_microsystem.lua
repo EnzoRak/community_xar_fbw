@@ -2,11 +2,11 @@ function p.__get_is_solid() return false end
 function p.__get_tex() return "" end
 
 function p.__main()
-    set_default_block("XAR_MOSSY_AIR_TOP")
+    set_default_block("XAR_SPACE_TOP_1")
     --time for gamer... oh yeah.
     --the sun microsystem. (TM?)
     set_pos(7,7,8,"block_sun_microsystem")
-    set_pos(7,7,6,"block_sun_god_carcass")
+    set_pos(7,7,7,"block_sun_god_carcass")
     set_pos(7,7,6,"block_sun_microsystem")
 
     local function shuffle(tbl)
@@ -31,6 +31,10 @@ function p.__main()
 
     shuffle(positions)
     local pos = positions
-    set_pos(pos[1].x, pos[1].y, pos[1].z, "block_twoworld_container")
-    
+    for i = 1, 3 do
+        set_pos(pos[i].x, pos[i].y, pos[i].z, "block_twoworld_container")
+    end
+    for i = 4, 6 do
+        set_pos(pos[i].x, pos[i].y, pos[i].z, "block_galaxy_blackhole")
+    end
 end
