@@ -29,7 +29,12 @@ function p.__main()
         "pink_flower",
         "alphabet_flower",
         "sunflower",
-        "ywkey_entrance"
+        "ywkey_entrance",
+        "block_sun_microsystem",
+        "block_twoworld_container",
+        "block_truecenter",
+        "block_dreamworld",
+        "block_sadlands"
     }
     
     for j = 1, #blocks do
