@@ -1,5 +1,6 @@
 p.code = "xxxxxx"
 p.level = 0
+p.bp = nil
 function p.__on_start(wid)
     ga_win_widget_mutable_text_box_start(wid, 0.4, 0.6, 0.45, 0.55, 0.01, 0.02, std.vec(0.5,0.5,0), "")
 end
@@ -24,7 +25,7 @@ function p.__process_input(wid)
 
     if game_key.pressed_or_spammed(wid, "ENTER") then
         --Removing the door.
-        game_code.code(ga_win_widget_mutable_text_box_get_text(wid) == p.code,p.level)
+        game_code.code(ga_win_widget_mutable_text_box_get_text(wid) == p.code,p.level,p.bp)
         ga_window_pop()
     end
 end

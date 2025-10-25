@@ -9,11 +9,11 @@
 - quirky comments
 - new monsters
 
-## ToDo 
+## ToDo
+
 - Achievement System
 - Database Room
 - More locations
 - More weapons
 - Finish Implementation of existing ments.
-- A [break_eternity.js](https://github.com/Patashu/break_eternity.js/) lua port, compatible with FBW
-- Start from Random Ying Flower
+- A [break_eternity.js](https://github.com/Patashu/break_eternity.js/) lua port, compatible with FBW \[DONE]
