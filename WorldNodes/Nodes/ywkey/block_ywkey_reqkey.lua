@@ -5,5 +5,7 @@ function p.__main()
     --hey just letting you know, without envRect you can skip this by shrinking
     set_default_block("XAR_EMPTY_BORING")
     std.create_edges("ywkey_reqkey")
+    --here
+    creare_rect("XAR_ANTI_PLUG_GLASS",1,1,15, 14,14,15)
     add_ment(7,7,7,"ment_key_guard_yellow")
 end
