@@ -16,6 +16,6 @@ ring_yellow_small block_concrete_yellow ring_small.obj
 
 bent_evaluator block_yellow_black_striped large_box.obj
 ment_evaluator block_yellow_black_striped large_box.obj
-ment_monster_dream_core sleep sphere.obj
+ment_dream_core sleep sphere.obj
 
 bent_upgrade_pack upgrade_pack large_box.obj

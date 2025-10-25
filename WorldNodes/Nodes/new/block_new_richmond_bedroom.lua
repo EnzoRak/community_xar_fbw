@@ -39,6 +39,7 @@ function p.__get_tex() return "block_bedroom" end
 function p.__main()
     set_default_block("XAR_SOLID_BORING")
     create_xar_chunk("XAR_RICHMOND_BEDROOM")
-    --time for dreamland
-    --set_pos(7,14,7,"")
+    --time for dreamworld
+    set_pos(7,14,7,"block_dreamworld")
+    base_blue_tele.set_blue_type_down(7,14,7)
 end

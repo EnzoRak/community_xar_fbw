@@ -6,7 +6,6 @@ function p.__main()
     create_xar_chunk("XAR_SPACE_SUN")
     --time for gamer... oh yeah.
     --the sun microsystem. (TM?)
-    --set_pos(8,8,8,"")
-    
+    set_pos(8,8,8,"block_sun_microsystem")
     --the fuck is this supposed to be
 end
