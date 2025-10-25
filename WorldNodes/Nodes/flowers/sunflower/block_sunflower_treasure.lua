@@ -52,7 +52,7 @@ function p.__main()
             end
         end
         set_pos(7,7,13,"block_sunflower_ritual")
-        add_bent_s(9,9,10,"bent_base_txt","^xFF00FFWhen you start the ritual, you won't be able to see the sun immediately, because it is where the sun is currently. It is also much larger than you.\nThe larger you are, the more damage you do, but also the more damage you take. Also, the farther you are, the less damage you take.\n\nYou can leave by going through the stem of the flower, which is Ying Tree^!")
+        add_bent_s(9,9,10,"bent_base_txt","^xFF00FFWhen you start the ritual, you won't be able to see the sun immediately, because it is where the sun is currently. It is also much larger than you.\nThe larger you are, the more damage you do, but also the more damage you take. Also, the farther you are, the less damage you take.\n\nYou can leave by going through the stem of the flower, which is Ying Tree\nWhen growing on the planet, blast away immediately.\n\nWhen you defeat the boss, your waypoints in this solar system will also all be wiped. ^!")
     else
         --default treasure
         add_bent(7,7,5,"bent_armor_200p") 

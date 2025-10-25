@@ -11,8 +11,12 @@ function p.payload_one_minute()
 end
 
 function p.payload(sleep_seconds)
-    if(ga_get_viewer_chunk_bt() == "XAR_RICHMOND_BEDROOM") then
-        --ga_console_print("we are in a richmond bedroom")
+    if(ga_get_viewer_chunk_bt() == "XAR_RICHMOND_BEDROOM") then 
+        --one in 10 for one hour
+        if(ga_randf()<(sleep_seconds/36000)) then
+            local chunk_id = ga_bp_to_parent_chunk_id(ga_get_viewer_level(), ga_chunk_id_and_lbp_to_bp(ga_get_viewer_chunk_id(), std.vec(7,14,7)))
+            game_base_tele_blue.start_tele(chunk_id)
+        end
     end
     local slept = false
     local sleep_mins = sleep_seconds / 60
