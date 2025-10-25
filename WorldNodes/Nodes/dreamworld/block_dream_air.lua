@@ -2,7 +2,7 @@ function p.__get_is_solid() return false end
 function p.__get_tex() return "" end
 
 function p.__main()
-    set_default_block("block_ascend_y_air_chal_SUB")
+    set_default_block("block_dream_air")
 
     local parent_depth = 0
     local level = get_level()
@@ -14,22 +14,12 @@ function p.__main()
 
     if(depth>=20) then
         base_blue_tele.set_blue_type_terminal(7,7,7)
-        if(depth>=25) then
-            if(randf()<0.3) then
-                add_bent_s(7,7,7,"bent_base_txt","Of Course there is a strategy to this. Place Long Distance Markers and set them as your Tracking Marker every time you grow. This way if you shrink farther away, you can always find the way back, because after using the yellow ring once, it transforms after taking effect so you don't have to remember it again. ")
-                add_bent(7,7,6,"bent_gold_5")
-                add_bent(7,7,8,"bent_gold_5")
-            end
-        end
     else
         base_blue_tele.set_blue_type_down(7,7,7)
     end
     
-
-    
-    
-    local values = {0,1,2,3,5,7}
-    local weights = {6,5,4,3,2,1}
+    local values = {0,1,2,6,8,10}
+    local weights = {32,16,8,4,2,1}
     local total = 0
     for i = 1, #weights do
         total = total + weights[i]
@@ -45,18 +35,18 @@ function p.__main()
         end
     end
 
-    for i = 1, chosen do 
+    -- do something 'chosen' times
+    for i = 1, chosen do
         local x = randi(0,15)
         local y = randi(0,15)
-        local z = randi(0,15)
-        if not (x==7 and y==7 and z>=7 and z<=9) then
-            add_bent(x,y,z,"bent_ring_yellow")
-        end
+        local z = randi(0,15) 
+        add_bent(x,y,z,"bent_ring_yellow")
+    end
+    if(randf()<0.2) then
+        set_pos(8,8,7,"block_simple_rwalk_maze")
     end
 
 end
-
-
 
 function p.__type_init(id)
     ia_block_new_var_i(id, "depth", 0)

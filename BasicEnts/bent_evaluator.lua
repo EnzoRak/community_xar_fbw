@@ -24,6 +24,9 @@ local function safe_eval(expr, level, bp)
         ga_play_sound_menu = ga_play_sound_menu,
         ga_console_print = ga_console_print,
         ga_print = ga_print,
+        ga_tele = ga_tele,
+        ga_get_viewer_path = ga_get_viewer_path,
+        std = std,
 
         -- make 'p' table itself visible
         p = p,

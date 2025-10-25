@@ -5,7 +5,7 @@ function p.__get_tex() return "block_dark_concrete_blue_border" end
 function p.__main()
     --temp
     --set the treasure room inside of 7,7,7
-    set_default_block("block_ascend_y_air_chal_SUB")
+    set_default_block("block_dream_air")
     ment_start(7,7,7, "ment_dream_core")
     local game_time = get_game_time()
     local len = 99999*60*60
