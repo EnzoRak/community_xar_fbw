@@ -11,4 +11,5 @@ function p.__on_use(level, bp)
     ga_window_push("win_code")
     win_code.code = ga_bent_get_param_s(level,bp)
     win_code.level = level
+    win_code.bp = bp
 end

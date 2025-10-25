@@ -37,6 +37,10 @@ function p.__main()
     local code = string.char(randi(65,90))..string.char(randi(65,90))..string.char(randi(65,90))..string.char(randi(65,90))..string.char(randi(65,90))..string.char(randi(65,90))
     chunk_set_s("code", code)
     add_bent_s(7,7,8,"bent_code_input",code)
+    add_bent_s(7,7,6,"bent_base_txt","This is where you input your code at the very start of the maze.")
+    create_rect("XAR_DOOR",1,1,3,14,14,3)
+    set_pos(7,7,1,"alphabet_flower_treasure")
+    add_bent(7,7,2,"bent_base_ring_green")
 end
 
 function p.__type_init(id)
