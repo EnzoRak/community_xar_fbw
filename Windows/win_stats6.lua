@@ -32,12 +32,15 @@ function p.create_tab_buttons(wid)
     ga_win_widget_button_start(wid, 111, x, y, w, h, "MYANTIS")
     ga_win_widget_button_start(wid, 112, x, y, w, h, "HELL")
     ga_win_widget_button_start(wid, 113, x, y, w, h, "NWP")
-
+    
     for i = 1,num_buttons do
         local center_x = (i - 1 + 0.5) * delta_x
         ga_win_widget_button_center_x_at(wid, 100 + i, center_x)
         ga_win_widget_button_set_color(wid, 100 + i, std.vec(0.0, 1.0, 1.0))
     end
+
+    ga_win_widget_button_start(wid, 999, 0.01, 0.01, w, h, "Open CXar Trophies")
+    ga_win_widget_button_set_color(wid, 999, std.vec(0,1,1))
 end
 
 function p.draw_trophy(wid, grid, row, col, name)
@@ -272,6 +275,8 @@ function p.__process_input(wid)
     local click_sel = game_win_top_bar.buttons_process_input_helper(wid)
 
     game_win_top_bar.input(wid, 6)
+
+    if click_sel == "Open CXar Trophies" then ga_window_push("win_cxar_trophies") return end
 
     num = ga_get_i("temp.xar.stats5.win_num")
     if click_sel == "YW"        then num = 1 end
