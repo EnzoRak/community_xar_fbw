@@ -35,7 +35,6 @@ function p.__main()
         "block_truecenter",
         "block_dreamworld",
         "block_sadlands"
-        "ywkey_entrance",
         "mcl12_containment_base",
         "infinity_database_container",
     }
