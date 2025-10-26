@@ -34,7 +34,9 @@ function p.__main()
         "block_twoworld_container",
         "block_truecenter",
         "block_dreamworld",
-        "block_sadlands"
+        "block_sadlands",
+        "mcl12_containment_base",
+        "infinity_database_container",
     }
     
     for j = 1, #blocks do
