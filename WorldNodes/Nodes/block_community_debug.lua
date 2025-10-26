@@ -30,6 +30,12 @@ function p.__main()
         "alphabet_flower",
         "sunflower",
         "ywkey_entrance",
+        "block_sun_microsystem",
+        "block_twoworld_container",
+        "block_truecenter",
+        "block_dreamworld",
+        "block_sadlands"
+        "ywkey_entrance",
         "mcl12_containment_base",
         "infinity_database_container",
     }

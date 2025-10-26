@@ -95,6 +95,7 @@ function p.on_die(inst_id)
     if(ga_get_viewer_level()<ga_ment_get_i(inst_id,"__start_level")) then
         --ga_console_print("welcome kansas")
         ga_block_change_perm(ga_ment_get_i(inst_id,"__start_level")-1, std.lp_to_bp(ga_chunk_id_and_offset_to_lp(chunkid,ga_ment_get_v(inst_id,"__offset"))),"block_replacement_solar_system")
+        --this will wipe the waypoint set in the small minigun planet
     else
         --ga_console_print("welcome ohio")
         ga_block_change_perm(ga_ment_get_i(inst_id,"__start_level"), ga_ment_get_v(inst_id,"placementbp"),"block_sun_god_carcass")

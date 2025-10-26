@@ -1,5 +1,0 @@
-std = "fbw+et" # fbw AND et
-[lints]
-multiple_statements = "allow"
-global_usage = "allow"
-unused_variable = "allow"
