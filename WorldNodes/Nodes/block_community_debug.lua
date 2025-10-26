@@ -29,7 +29,9 @@ function p.__main()
         "pink_flower",
         "alphabet_flower",
         "sunflower",
-        "ywkey_entrance"
+        "ywkey_entrance",
+        "mcl12_containment_base",
+        "infinity_database_container",
     }
     
     for j = 1, #blocks do

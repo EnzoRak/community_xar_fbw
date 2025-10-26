@@ -3,6 +3,7 @@ function p.__get_tex() return "" end
 
 function p.__main()
     set_default_block("XAR_EMPTY_BORING")
+    create_rect("XAR_QUICKSAND_GRASS_1", 0,0,0, 15,15,0)
     create_rect("XAR_SOLID_BORING_DARK_GREEN_BORDER", 7,7,0, 7,7,4)
     create_rect("XAR_SOLID_BORING_DARK_GREEN_BORDER", 5,7,5, 9,7,5)
     create_rect("XAR_SOLID_BORING_DARK_GREEN_BORDER", 7,5,5, 7,9,5)
