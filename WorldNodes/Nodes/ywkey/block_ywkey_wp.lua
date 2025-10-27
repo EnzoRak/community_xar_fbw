@@ -6,4 +6,5 @@ function p.__main()
     std.create_edges("XAR_SOLID_BORING_CONCRETE_CHECKER_BLUE")
     add_bent_s(7,7,7,"bent_base_waypoint", "Ying World Purple Cube")
     add_bent(7,7,5,"bent_base_save")
+    add_ben_st(7,7,9,"bent_cxar_trophy","ywkey")
 end
