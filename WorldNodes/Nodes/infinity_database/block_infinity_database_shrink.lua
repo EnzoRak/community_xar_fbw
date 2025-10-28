@@ -15,4 +15,5 @@ function p.__main()
     add_bent(7,7,1,"bent_base_ring_green")
     add_bent(7,7,14,"bent_base_ring_green")
     add_bent(13,13,13,"bent_base_ring_pink_source")
+    add_bent_s(2,2,2,"bent_cxar_trophy","inf_data")
 end

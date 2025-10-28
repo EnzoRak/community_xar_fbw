@@ -242,8 +242,14 @@ function p.fromthetop()
         end
         return true
     elseif(next_target == "quicksandgrass") then
-        --more? help block, every chunk also has quicksand grass 11
         local pe = path
+        if (ga_get_b("community_xar_fbw.ryf.exclude_qsg")) then
+            -- we gotta go back
+            pe = pe:sub(1, -2):sub(1, -2):sub(1, -2)
+            ga_tele(pe,std.block_center(std.vec(7,7,7)))
+            return true
+        end
+        --more? help block, every chunk also has quicksand grass 11
         for i = 1, 9 do
             pe = pe .. "_" .. string.format("%02x", p.randinext(0,255)) .. "0"
         end

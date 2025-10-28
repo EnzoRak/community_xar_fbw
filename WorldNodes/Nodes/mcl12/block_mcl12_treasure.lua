@@ -19,4 +19,5 @@ function p.__main()
     add_bent(2,2,8,"bent_upgrade_gun_3_num")
     add_bent(2,2,10,"bent_upgrade_gun_6_num")
     add_bent(2,2,12,"bent_upgrade_gun_6_num")
+    add_bent_s(13,13,13,"bent_cxar_trophy","mcl12")
 end

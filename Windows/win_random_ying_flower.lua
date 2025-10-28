@@ -30,10 +30,18 @@ function p.make_list(wid)
     local char_w = 0.015
     local char_h = 0.03
     local col = {x=0.0, y=0.5, z=0.5}
+    local d = ga_get_b("community_xar_fbw.ryf.exclude_qsg")
+    local dd = ""
+    if d then
+        dd = "Include"
+    else
+        dd = "Exclude"
+    end
     local options = 
     {
         "" .. randyingf .. " Random Ying Flower",
         "Set Magic String (Affects RNG) (Current: '"..ga_get_s("community_xar_fbw.ryf.magic_string").."')",
+        dd .. " Quicksand Grass",
         "Start Teleportation Sequence"
     }
     ga_win_widget_small_list_start(
@@ -70,6 +78,10 @@ function p.__process_input(wid)
         ga_window_push("win_enter_magic_string")
         p.make_list(wid)
         ga_win_widget_small_list_set_selected(wid, 1) --Fragile!!!
+    elseif(sel_name:find("Quicksand Grass")) then
+        ga_set_b("community_xar_fbw.ryf.exclude_qsg", not ga_get_b("community_xar_fbw.ryf.exclude_qsg"))
+        p.make_list(wid)
+        ga_win_widget_small_list_set_selected(wid, 2) --Fragile!!!
     elseif(sel_name:find("Teleportation")) then
         if(ga_get_b("community_xar_fbw.ryf.enabled") == false) then
             ga_play_sound("error")
@@ -79,6 +91,6 @@ function p.__process_input(wid)
             game_tele_random_ying_flower.main()
         end
         p.make_list(wid)
-        ga_win_widget_small_list_set_selected(wid, 2) --Fragile!!!
+        ga_win_widget_small_list_set_selected(wid, 3) --Fragile!!!
     end
 end

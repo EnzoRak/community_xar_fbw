@@ -11,7 +11,12 @@ end
 -- add_bent_s(7,7,14,"bent_cxar_trophy","example")
 p.trophies = {};p.trophies_name = {} -- order CANNOT change
 local function add(a,b)p.trophies[#p.trophies+1] = a;p.trophies_name[#p.trophies]=b end
-add("example", "Example") -- change this example trophy!!
+add("ywk", "Ying World Purple Cube")
+add("inf_data", "Infinity Database")
+add("alpha_flower", "Alphabet Flower")
+add("mcl12", "Mylantis Caves Layer 12")
+add("pink_key", "Pink Key")
+add("pink_flower", "Pink Flower")
 
 p.map = {} -- performance reasons.
 for i = 1,#p.trophies do p.map[p.trophies[i]] = i end
@@ -41,15 +46,17 @@ function p.__render(wid)
     ga_win_txt(wid, 0, 0.02, num_trophies .. "/" .. #p.trophies .. " (" .. math.floor(frac*1000)/10 .. "%)")
     ga_win_quad_color(wid, 0, 0, 1, 0.02, std.vec(0,0,0))
     ga_win_quad_color(wid, 0, 0, frac, 0.02, std.vec(0,1,0))
+    local hover = ""
     -- todo add icon support
     for i = 1,#p.trophies do
         local x = ((i-1)%5)*0.2+0.1
         local y = 0.8-math.floor((i-1)/5)*0.2
         ga_win_quad(wid, x-0.065, y-0.08+scroll, x+0.065, y+0.08+scroll, trophies_unlocked[i] and "secret_trophy" or "trophy_do_not_have")
         if x-0.065 < c.x and c.x < x+0.065 and y-0.08+scroll < c.y and c.y < y+0.08+scroll then
-            ga_win_txt(wid, c.x, c.y, trophies_unlocked[i] and p.trophies_name[i] or "???")
+            hover = trophies_unlocked[i] and p.trophies_name[i] or "???"
         end
     end
+    ga_win_txt(wid, c.x, c.y, hover)
 end
 
 function p.__process_input(wid)
