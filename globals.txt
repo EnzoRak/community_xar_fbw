@@ -8,3 +8,7 @@ i community_xar_fbw.banked_gold 0
 b community_xar_fbw.ryf.exclude_qsg false
 s community_xar_fbw.fractalbase.enemies_discovered ""
 s community_xar_fbw.trophies ""
+b community_xar_fbw.zooming false
+f community_xar_fbw.max_back_dist 16
+f community_xar_fbw.curr_back_dist 5
+b community_xar_fbw.invzooming false

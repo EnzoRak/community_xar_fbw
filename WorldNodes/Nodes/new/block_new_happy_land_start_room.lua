@@ -15,4 +15,10 @@ function p.__main()
         ga_window_push("win_random_ying_flower")
     ]])
     ment_end()
+    --temp test
+    ment_start(1,1,14,"ment_evaluator")
+    ment_set_s("on_use",[[
+        ga_window_push("win_atm")
+    ]])
+    ment_end()
 end
