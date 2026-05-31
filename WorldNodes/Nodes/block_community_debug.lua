@@ -30,11 +30,13 @@ function p.__main()
         "alphabet_flower",
         "sunflower",
         "ywkey_entrance",
-        "block_sun_microsystem",
-        "block_twoworld_container",
-        "block_truecenter",
-        "block_dreamworld",
-        "block_sadlands"
+        "sun_microsystem",
+        "twoworld_container",
+        "truecenter",
+        "dreamworld",
+        "sadlands",
+        "mcl12_containment_base",
+        "infinity_database_container",
     }
     
     for j = 1, #blocks do
