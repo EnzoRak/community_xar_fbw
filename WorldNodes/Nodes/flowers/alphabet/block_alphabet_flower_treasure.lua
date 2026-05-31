@@ -54,4 +54,5 @@ function p.__main()
         add_bent(x,z,y,upg)
     end
     add_bent(13,13,13,"bent_base_ring_pink_source")
+    add_bent_s(13,13,2,"bent_cxar_trophy","alpha_flower")
 end

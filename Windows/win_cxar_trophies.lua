@@ -17,6 +17,9 @@ add("alpha_flower", "Alphabet Flower")
 add("mcl12", "Mylantis Caves Layer 12")
 add("pink_key", "Pink Key")
 add("pink_flower", "Pink Flower")
+add("glc", "Good Luck Cube")
+add("sunflower", "Sunflower")
+add("sunflower2", "Sunflower Ritual")
 
 p.map = {} -- performance reasons.
 for i = 1,#p.trophies do p.map[p.trophies[i]] = i end
