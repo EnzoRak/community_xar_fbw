@@ -11,7 +11,12 @@ end
 -- add_bent_s(7,7,14,"bent_cxar_trophy","example")
 p.trophies = {};p.trophies_name = {} -- order CANNOT change
 local function add(a,b)p.trophies[#p.trophies+1] = a;p.trophies_name[#p.trophies]=b end
-add("example", "Example") -- change this example trophy!!
+add("ywk", "Ying World Purple Cube")
+add("inf_data", "Infinity Database")
+add("alpha_flower", "Alphabet Flower")
+add("mcl12", "Mylantis Caves Layer 12")
+add("pink_key", "Pink Key")
+add("pink_flower", "Pink Flower")
 
 p.map = {} -- performance reasons.
 for i = 1,#p.trophies do p.map[p.trophies[i]] = i end
