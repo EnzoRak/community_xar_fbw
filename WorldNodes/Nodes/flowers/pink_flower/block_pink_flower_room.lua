@@ -84,6 +84,7 @@ function p.__main()
         local typeoftheparentparentchunk = get_input_path_bt(get_input_path_length()-2)
         add_bent_s(4,6,3,"bent_base_waypoint","Pink Flower in " .. typeoftheparentparentchunk)
     end
+    add_bent_s(4,6,5,"bent_cxar_trophy","pink_flower")
     --making it look all fancy
     set_pos(6,2,1,"XAR_ASCEND_SIMPLE")
     set_pos(5,2,0,"XAR_BLUE")
