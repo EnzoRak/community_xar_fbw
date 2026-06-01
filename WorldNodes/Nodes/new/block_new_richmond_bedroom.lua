@@ -33,11 +33,9 @@
 --prestiege system, in which all your waypoints are cleared (Except for EMERGENCY), but playerdata is stored somewhere (except for waypoints, but upgrades are stored), and some additional ways to get buffs are added
     --top.__reboot_game() is very interesting.
     --such as Even Lower Drag, instant movement, upgrade effect increase, reduced weapon damage curve, more areas
-function p.__get_is_solid() return true end
-function p.__get_tex() return "block_bedroom" end
+function p.__get_bt_to_copy() return "XAR_RICHMOND_BEDROOM" end
 
 function p.__main()
-    set_default_block("XAR_SOLID_BORING")
     create_xar_chunk("XAR_RICHMOND_BEDROOM")
     --time for dreamworld
     set_pos(7,14,7,"block_dreamworld")

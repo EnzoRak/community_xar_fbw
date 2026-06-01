@@ -22,56 +22,56 @@ function p.input(wid, id)
         --Opening the xar menu.
         ga_window_pop()
         ga_main_menu_push("main_menu")
-        return
+        return true
     end
     if( click_sel == "UPGRADES" or
         ga_win_key_pressed(wid, "F2") and not id == 2 )
     then
         ga_window_pop()
         ga_window_push("win_stats2")
-        return
+        return true
     end
     if( click_sel == "WEP STATS" or
         ga_win_key_pressed(wid, "F3") and not id == 3 )
     then
         ga_window_pop()
         ga_window_push("win_stats3")
-        return
+        return true
     end
     if( click_sel == "LEVEL UP" or
         ga_win_key_pressed(wid, "F4") and not id == 4 )
     then
         ga_window_pop()
         ga_window_push("win_stats4")
-        return
+        return true
     end
     if( click_sel == "DIFF" or
         ga_win_key_pressed(wid, "F5") and not id == 5 )
     then
         ga_window_pop()
         ga_window_push("win_stats5")
-        return
+        return true
     end
     if( click_sel == "TROPHIES" or
         ga_win_key_pressed(wid, "F6") and not id == 6 )
     then
         ga_window_pop()
         ga_window_push("win_stats6")
-        return
+        return true
     end
     if( click_sel == "WEP MODES" or
         ga_win_key_pressed(wid, "F7") and not id == 7 )
     then
         ga_window_pop()
         ga_window_push("win_stats7")
-        return
+        return true
     end
     if( click_sel == "FRACTALBASE" or
         ga_win_key_pressed(wid, "F8") and not id == 8 )
     then
         ga_window_pop()
         ga_window_push("win_fractalbase")
-        return
+        return true
     end
 end
 

@@ -288,7 +288,7 @@ function p.__process_input(wid)
 
     local click_sel = game_win_top_bar.buttons_process_input_helper(wid)
 
-    game_win_top_bar.input(wid, 7)
+    if game_win_top_bar.input(wid, 7) then return end
 
     ga_init_i("temp.xar.stats7.win_num", 1)
     local wep_num = ga_get_i("temp.xar.stats7.win_num")

@@ -1,8 +1,6 @@
-function p.__get_is_solid() return true end
-function p.__get_tex() return "block_planet_clay" end
+function p.__get_bt_to_copy() return "XAR_PLANET_CLAY" end
 
 function p.__main()
-    set_default_block("XAR_EMPTY_BORING")
     create_xar_chunk("XAR_PLANET_CLAY")
 
     local sundirection = -1

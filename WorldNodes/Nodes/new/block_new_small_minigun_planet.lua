@@ -1,8 +1,6 @@
-function p.__get_is_solid() return true end
-function p.__get_tex() return "block_planet_small_minigun" end
+function p.__get_bt_to_copy() return "XAR_SMALL_MINIGUN_PLANET" end
 
 function p.__main()
-    set_default_block("XAR_EMPTY_BORING")
     create_xar_chunk("XAR_SMALL_MINIGUN_PLANET")
 
     local sundirection = -1

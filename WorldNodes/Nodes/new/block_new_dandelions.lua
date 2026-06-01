@@ -1,8 +1,6 @@
-function p.__get_is_solid() return false end
-function p.__get_tex() return "" end
+function p.__get_bt_to_copy() return "XAR_DANDELIONS" end
 
 function p.__main()
-    set_default_block("XAR_EMPTY_BORING")
     create_xar_chunk("XAR_DANDELIONS")
     for i = 0,9 do
         --never on the edge of a chunk

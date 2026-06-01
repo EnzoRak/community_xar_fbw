@@ -1,8 +1,6 @@
-function p.__get_is_solid() return false end
-function p.__get_tex() return "" end
+function p.__get_bt_to_copy() return "XAR_QUICKSAND_GRASS_11" end
 
 function p.__main()
-    set_default_block("XAR_EMPTY_BORING")
     create_xar_chunk("XAR_QUICKSAND_GRASS_11")
     for i = 0, 15 do
         for j = 0, 15 do

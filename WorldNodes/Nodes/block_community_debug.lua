@@ -39,6 +39,7 @@ function p.__main()
         "sadlands",
         "mcl12_containment_base",
         "infinity_database_container",
+        {"infx_enter",val=4},
     }
     
     for j = 1, #blocks do
@@ -47,7 +48,16 @@ function p.__main()
         local x = i%14+1
         local y = 1--(math.floor(i/6)%6+1)
         local z = 2*(i//14+1)
-        set_pos(x,y,z,block)
+        if type(block) == "table" then
+            set_pos(x,y,z,block[1])
+            for i,v in pairs(block) do
+                if i ~= 1 then
+                    block_set_i(x,y,z, i, v)
+                end
+            end
+        else
+            set_pos(x,y,z,block)
+        end
         if x == 1 then
             create_rect("XAR_SOLID_BORING",1,y,z-1,14,y,z-1)
         end

@@ -1,8 +1,6 @@
-function p.__get_is_solid() return false end
-function p.__get_tex() return "" end
+function p.__get_bt_to_copy() return "XAR_GROUP_3_PATCH_TREES_BELOW" end
 
 function p.__main()
-    set_default_block("XAR_EMPTY_BORING")
     create_xar_chunk("XAR_GROUP_3_PATCH_TREES_BELOW")
     local q = {}
     for x=0,15 do
