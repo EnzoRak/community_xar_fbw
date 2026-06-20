@@ -39,6 +39,8 @@ function p.__main()
         "sadlands",
         "mcl12_containment_base",
         "infinity_database_container",
+
+        "test_time"
     }
     
     for j = 1, #blocks do
