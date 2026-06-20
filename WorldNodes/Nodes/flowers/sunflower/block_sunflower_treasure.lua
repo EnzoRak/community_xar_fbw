@@ -54,7 +54,8 @@ function p.__main()
         set_pos(7,7,13,"block_sunflower_ritual")
         add_bent_s(7,7,10,"bent_cxar_trophy","sunflower")
         add_bent_s(7,7,12,"bent_cxar_trophy","sunflower2")
-        add_bent_s(9,9,10,"bent_base_txt","^xFF00FFWhen you start the ritual, you won't be able to see the sun immediately, because it is where the sun is currently. It is also much larger than you.\nThe larger you are, the more damage you do, but also the more damage you take. Also, the farther you are, the less damage you take.\n\nYou can leave by going through the stem of the flower, which is Ying Tree\nWhen growing on the planet, blast away immediately.\n\nWhen you defeat the boss, your waypoints in this solar system will also all be wiped. ^!")
+        --add_bent_s(9,9,10,"bent_base_txt","^xFF00FFWhen you start the ritual, you won't be able to see the sun immediately, because it is where the sun is currently. It is also much larger than you.\nThe larger you are, the more damage you do, but also the more damage you take. Also, the farther you are, the less damage you take.\n\nYou can leave by going through the stem of the flower, which is Ying Tree\nWhen growing on the planet, blast away immediately.\n\nWhen you defeat the boss, your waypoints in this solar system will also all be wiped. ^!")
+        cxar.add_txt(9,9,10,"sunflower_treasure2")
     else
         --default treasure
         add_bent(7,7,5,"bent_armor_200p") 
@@ -67,6 +68,7 @@ function p.__main()
         add_bent(5,1,1,"bent_upgrade_gun_9_proj_speed")
         add_bent(1,5,1,"bent_upgrade_gun_9_proj_speed")
         add_bent_s(7,7,10,"bent_cxar_trophy","sunflower")
-        add_bent_s(9,9,10,"bent_base_txt","Now there would be better treasure here if you are inside of a Clay Planet and Small Minigun Planet at the same time. \nThis 'better treasure' lets you fight a boss and unlock a new area.\n\nYou can leave by going through the stem of the flower, which is Ying Tree")
+        --add_bent_s(9,9,10,"bent_base_txt","Now there would be better treasure here if you are inside of a Clay Planet and Small Minigun Planet at the same time. \nThis 'better treasure' lets you fight a boss and unlock a new area.\n\nYou can leave by going through the stem of the flower, which is Ying Tree")
+        cxar.add_txt(9,9,10,"sunflower_treasure")
     end
 end

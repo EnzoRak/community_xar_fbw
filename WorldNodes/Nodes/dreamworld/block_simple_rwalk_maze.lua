@@ -14,7 +14,8 @@ function p.__main()
         end
     end
     set_pos(15,15,15,"XAR_EMPTY_BORING")
-    add_bent_s(15,15,15,"bent_base_txt","The entrance is under the opposite corner")
+    --add_bent_s(15,15,15,"bent_base_txt","The entrance is under the opposite corner")
+    cxar.add_txt(15,15,15,"simple_rwalk_maze")
     set_pos(1,1,1, "XAR_STOPPER")
     set_pos(1,1,0, "XAR_EMPTY_BORING")
     add_bent(1,1,0, "bent_base_ring_pink_dest")

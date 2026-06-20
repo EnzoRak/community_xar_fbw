@@ -14,8 +14,10 @@ function p.__main()
     create_rect("XAR_YING_FOREST", 10,6,5, 10,10,5)
     set_pos(10,5,7, "XAR_YING_FOREST")
     
-    add_bent_s(10,8,9,"bent_base_txt","Part 2: ^xFF00FFThe Hidden Pink Ring^!\n\nI hope you know which areas lead to more areas without Pink Spheres in the Ying Forest.\n\nOnce you shrink down, the only way to come back to this size is to use a ^x0000FFBlue Ring.^! \n\nThe only way to progress it to find a ^xFF00FFPink Ring^! somewhere that will take you out of the Ying Forest.")
-    add_bent_s(10,8,8,"bent_base_txt","In the current beta branch im looking at, There is a Pink Active area in the Super Massive Black Hole.")
+    --add_bent_s(10,8,9,"bent_base_txt","Part 2: ^xFF00FFThe Hidden Pink Ring^!\n\nI hope you know which areas lead to more areas without Pink Spheres in the Ying Forest.\n\nOnce you shrink down, the only way to come back to this size is to use a ^x0000FFBlue Ring.^! \n\nThe only way to progress it to find a ^xFF00FFPink Ring^! somewhere that will take you out of the Ying Forest.")
+    --add_bent_s(10,8,8,"bent_base_txt","In the current beta branch im looking at, There is a Pink Active area in the Super Massive Black Hole.")
+    cxar.add_txt(10,8,9,"pk_thehardest_1")
+    cxar.add_txt(10,8,8,"pk_thehardest_2")
 
     --new solution 1.01.30
     --Solution:First, get to at least depth 30 of the Ying Forest. Find an Unremebered Tower (black tower) that has a "Tweedle Dum Air Secret Case" on the Treasure Kilo of the tower. You can see if the case exists by looking through the second to top floor of the tower (through the glass windows). Shrink through the toll gate on the top floor, then go down and enter the Tweedle Dum Air. Enter one of the blue 3x3x5 bases, and shrink. Now go towards the waypoint in the back and shrink using the shrink there. You should now be inside Stoney Air. Then, shrink and enter a Rich Yellow Cube (use the Look Block HUD to find it. It has the exact name: "XAR_STONEY_AIR_YELLOW_CUBE_1_RICH". Alternatively, with the 'non-cheaty way', look at the tops of Yellow Cubes that are the size of a chunk, a Rich Yellow Cube has a grey corner on the top). Then, use a Blue Ring to get to the Secret Island (there is one in every green lattice block). Travel to any of the corners of the island. then shrink and enter the Galaxy Cube in the Galaxy Flower. Use the corner shrink 3 times, then fly to the Supermassive Black Hole. (It is slightly faster to start from the back left corner.) Travel past the first shell with the waypoint, then go through the plugs, go through the tunnels until you reach the area with the Orange Ground Cities. Go to one of the buildings with a pink P and enter it, then use the Pink Ring. 
@@ -56,8 +58,10 @@ function p.__main()
     add_bent(9,9,3,"bent_upgrade_gun_6_num")
 
 
-    chunk_dyn_set_s("dyn_base_blue_tele_type", "terminal")
-    chunk_dyn_set_i("dyn_base_blue_tele_pos_x", 8)
-    chunk_dyn_set_i("dyn_base_blue_tele_pos_y", 8)
-    chunk_dyn_set_i("dyn_base_blue_tele_pos_z", 7)
+    --chunk_dyn_set_s("dyn_base_blue_tele_type", "terminal")
+    --chunk_dyn_set_i("dyn_base_blue_tele_pos_x", 8)
+    --chunk_dyn_set_i("dyn_base_blue_tele_pos_y", 8)
+    --chunk_dyn_set_i("dyn_base_blue_tele_pos_z", 7)
+    -- use the base helpers like a normal person
+    base_blue_tele.set_blue_type_terminal(8,8,7)
 end

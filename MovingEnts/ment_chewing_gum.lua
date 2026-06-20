@@ -26,7 +26,8 @@ function p.__type_init(id)
     ia_ment_new_var_f(id, "damage_aura_next_time", 0.0, 60.0)
     ia_ment_new_static_var_f(id, "damage_aura_radius", aura_radius)
 
-    ia_ment_new_var_f_perm(id, "damage_fraction", 0.5) -- change this on initialization using ment_set? 
+    -- nerf!!!!! 50% all health -> 10% all health
+    ia_ment_new_var_f_perm(id, "damage_fraction", 0.1) -- change this on initialization using ment_set? 
     --[[
     ia_ment_new_static_var_b(id, "damage_aura_has", true)
     ia_ment_new_static_var_i(id, "damage_aura_damage", 0)

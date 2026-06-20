@@ -12,6 +12,7 @@ function p.__main()
     --set_pos(7,7,7, "pink_out")
     set_pos(15,15,15, "XAR_EMPTY_BORING")
     add_bent(15,15,15, "bent_base_ring_pink_dest")
-    set_pos(0,0,15, "XAR_EMPTY_BORING")
-    add_bent_s(0,0,15, "bent_base_txt", "This is a ^x00ff00Supermassive Black Hole^!.")
+    --set_pos(0,0,15, "XAR_EMPTY_BORING") -- not actually needed.
+    --add_bent_s(0,0,15, "bent_base_txt", "This is a ^x00ff00Supermassive Black Hole^!.")
+    cxar.add_txt(0,0,15, "galaxy_blackhole")
 end

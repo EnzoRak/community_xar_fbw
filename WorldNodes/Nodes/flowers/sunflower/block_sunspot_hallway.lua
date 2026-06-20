@@ -27,7 +27,7 @@ function p.__main()
         ment_set_f("__radius",12.0)
         ment_set_s("identity_str","Big Yellow Lamprey")
         ment_end()
-    elseif(randomvalue<0.62) then
+    elseif(randomvalue<0.58) then
         --dont accidently kill it
         ment_start(7,7,7,"ment_monster_wolf")
         ment_set_f("__radius",1.0)
@@ -36,7 +36,7 @@ function p.__main()
         ment_set_b("emp_immune", true)
         ment_set_b("freeze_immune", true)
         ment_end()
-    elseif(randomvalue<0.64) then
+    elseif(randomvalue<0.59) then
         --litterally a brick wall
         ment_start(7,7,7,"ment_monster_blood_boy_greater")
         ment_set_f("__radius",14.0)
@@ -45,7 +45,7 @@ function p.__main()
         --ch(2147483647)
         --ment_set_s("identity_str","Big Greater Blood Boy (BUFFED)")
         ment_end()
-    elseif(randomvalue<0.76) then
+    elseif(randomvalue<0.72) then
         local count = 1
         --idk man
         local accumulatordeterminant = randf()
@@ -61,7 +61,7 @@ function p.__main()
             ment_set_s("identity_str","Small Clockwork Watchman")
             ment_end()
         end
-    elseif(randomvalue<0.84) then
+    elseif(randomvalue<0.82) then
         local count = 1
         --idk man
         local accumulatordeterminant = randf()

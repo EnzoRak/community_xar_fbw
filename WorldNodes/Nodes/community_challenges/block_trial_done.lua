@@ -14,13 +14,23 @@ function p.__get_use_msg(level, bp)
 end
 
 function p.__on_use(level, mybp)
+    ga_debug_line("0")
     local lv = level-1 -- dangerous!!!
+    ga_debug_line("1")
     local vcp = std.vec(0,0,0) -- dangerous!!!
+    ga_debug_line("2")
     local bp = std.vec(7,7,5)
-    ga_chunk_set_i(lv, vcp, "tier", ga_chunk_get_i(lv, vcp, "tier")+1)
+    ga_debug_line("3")
+    local cur_tier = ga_chunk_get_i(lv, vcp, "tier")
+    ga_debug_line("3.1")
+    ga_chunk_set_i(lv, vcp, "tier", cur_tier+1)
+    ga_debug_line("4")
     ga_chunk_set_f(lv, vcp, "unlock_time", ga_get_game_time()+3600) -- so the treasure worked properly
+    ga_debug_line("5")
     ga_chunk_set_b(lv, vcp, "locked", true)
+    ga_debug_line("6")
     ga_tele(ga_get_viewer_path():sub(1,-9), std.vec(9,9,9))
+    ga_debug_line("7")
 end
 
 function p.__on_use2(level, bp)

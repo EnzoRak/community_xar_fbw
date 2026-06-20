@@ -8,3 +8,4 @@ function p.__main()
 end
 
 --hey just letting you know you can also use XAR_ASCEND_SIMPLE. Also, this is not used anywhere. Delete?
+-- no, is used community_debug dirty_air_case gl_cube

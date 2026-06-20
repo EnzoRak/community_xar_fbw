@@ -4,9 +4,9 @@ function p.__get_tex() return "" end
 function p.__main()
     set_default_block("XAR_EMPTY_BORING")
     --this would probably be a good place to add that bent that just gives everything. 
-    for x = 2, 13, 1 do       
-        for y = 2, 13, 1 do
-            for z = 2, 13, 1 do
+    for x = 3, 12, 1 do       
+        for y = 3, 12, 1 do
+            for z = 3, 12, 1 do
                 add_bent(x,y,z,"bent_gold_1000")
             end
         end
