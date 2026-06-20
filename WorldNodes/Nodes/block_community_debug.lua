@@ -40,6 +40,8 @@ function p.__main()
         "mcl12_containment_base",
         "infinity_database_container",
         {"infx_enter",val=4},
+
+        "test_time"
     }
     
     for j = 1, #blocks do
