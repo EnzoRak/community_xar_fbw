@@ -51,6 +51,7 @@ function p.process_final(args, exceptions)
     ret.damage_dealt = 0
     ret.killed = false
     ret.terminal_hit = true
+    ret.display_hit_to_hud = true
 
     local source_type = ga_ment_get_type(args.source_inst_id)
     local target_type = ga_ment_get_type(args.target_inst_id)
@@ -58,9 +59,9 @@ function p.process_final(args, exceptions)
     --Identity string.
     --When the hit results in the target ment being displayed
     --in the identity bar part of the hud.
-    if( ga_ment_static_b_exists_and_true(source_type, "identifies") and
-       ga_ment_type_var_exists(target_type, "identity_str") and
-       ga_ment_get_static_s(target_type, "identity_str") ~= "" )
+    if( ga_ment_b_exists_and_true(args.source_inst_id, "identifies") and
+       ga_ment_var_exists(args.target_inst_id, "identity_str") and
+       ga_ment_get_s(args.target_inst_id, "identity_str") ~= "" )
     then
         game_ment_identify.maybe(args.target_inst_id)
     end
@@ -78,20 +79,29 @@ function p.process_final(args, exceptions)
 
     local compute_damage = false
     if( exceptions.compute_damage == true and
-        ga_ment_type_var_exists(source_type, "damage") ) then
+        ga_ment_var_exists(args.source_inst_id, "damage") ) then
         compute_damage = true
     end
     if( game_ment_health.get_ment_has_health(args.target_inst_id) and
         game_ment_health.get_ment_health(args.target_inst_id) and
-        ga_ment_type_var_exists(source_type, "damage") and
+        ga_ment_var_exists(args.source_inst_id, "damage") and
         exceptions.no_damage ~= true )
     then
         compute_damage = true
     end
 
+    if( target_type == "player_hit_sphere" ) then
+        --Need to do a visibility test, to avoid a bug
+        --(the player being hit through a wall if they are
+        --in the corner of a room).
+        local ok = p.extra_got_hit_vis_check(
+            args.level, args.lp, args.target_inst_id)
+        if( not ok ) then return ret end
+    end
+
     local damage = 0
     if( compute_damage and
-        ga_ment_type_var_exists(source_type, "damage") )
+        ga_ment_var_exists(args.source_inst_id, "damage") )
     then
         local raw_damage = ga_ment_get_i(args.source_inst_id, "damage")
         local allow_powerus = true
@@ -107,7 +117,12 @@ function p.process_final(args, exceptions)
         end
         if( team_id_2 == 1 ) then
             --Damage to the player.
-           damage = game_damage.calc_damage_to_player(raw_damage, allow_powerus) 
+            --
+            --New new way (correct way).
+            damage = raw_damage
+            --
+            --Old way (bug).
+            -- damage = game_damage.calc_damage_to_player(raw_damage, allow_powerus) --Wrong (bug).
         end
         --Damage in modifier.
         if( _G[target_type]["xar_get_level_mod_damage_in"] ) then
@@ -193,13 +208,13 @@ function p.process_final(args, exceptions)
     if( ret.damage_dealt > 0 and
         ret.killed == false and
         exceptions.no_hurt_sound ~= true and
-        ga_ment_type_var_exists(target_type, "sound_hurt" ) and
-        ga_ment_type_var_exists(target_type, "last_sound_hurt") )
+        ga_ment_var_exists(args.target_inst_id, "sound_hurt" ) and
+        ga_ment_var_exists(args.target_inst_id, "last_sound_hurt") )
     then
         local game_time = ga_get_game_time()
         local last_sound_hurt = ga_ment_get_f(args.target_inst_id, "last_sound_hurt")
         local sound_hurt_period = 0.5
-        if( ga_ment_type_var_exists(target_type, "sound_hurt_period") ) then
+        if( ga_ment_var_exists(args.target_inst_id, "sound_hurt_period") ) then
             sound_hurt_period = ga_ment_get_f(args.target_inst_id, "sound_hurt_period")
         end
         if( game_time - last_sound_hurt > sound_hurt_period ) then
@@ -210,7 +225,7 @@ function p.process_final(args, exceptions)
     end
 
     --Alternate display icon.
-    if( ga_ment_type_var_exists(source_type, "alt_attack_icon") ) then
+    if( ga_ment_var_exists(args.source_inst_id, "alt_attack_icon") ) then
         local attack_icon = ga_ment_get_s(args.source_inst_id, "alt_attack_icon")
         if( attack_icon ~= "" ) then
             local name = "ment" .. tostring(args.source_inst_id)
@@ -230,6 +245,13 @@ function p.process_final(args, exceptions)
                 dir = ga_ment_vec_to_another_ment(args.target_inst_id, parent_inst_id)
             end
             local duration = 1.1
+            --
+            --What to display to the hud.
+            if( ga_ment_var_exists(args.source_inst_id, "display_hit_to_hud") and
+                ga_ment_get_b(args.source_inst_id, "display_hit_to_hud") == false )
+            then
+                ret.display_hit_to_hud = false
+            end
             ga_hud_reg_dir_tex(name, attack_icon, dir, duration)
         end
     end
@@ -243,4 +265,22 @@ function p.process_final(args, exceptions)
     -- ga_print("ret.terminal_hit = " .. tostring(ret.terminal_hit))
 
     return ret
+end
+
+--This check should be performed after an ment hits the player hit sphere
+--(to avoid the player being hit through the corner of a room).
+--The hitter_lp should be on the surface of the hit sphere of the hittie.
+function p.extra_got_hit_vis_check(
+    hitter_level, hitter_lp,
+    hittie_inst_id) --Probably the player hit sphere.
+--
+    local hittie_level = ga_ment_get_level(hittie_inst_id)
+    local hittie_lp    = ga_ment_get_lp(hittie_inst_id)
+    --
+    local data = ga_convert_lp(hitter_level, hittie_level, hitter_lp)
+    if( not data.is_valid ) then return false end --Should not happen.
+    local hitter_lp_converted = data.value
+    --Now hittie_lp and hitter_lp_converted are both on level hittie_level.
+    local visible = ga_vis_test_level(hittie_level, hittie_lp, hitter_lp_converted)
+    return visible
 end
