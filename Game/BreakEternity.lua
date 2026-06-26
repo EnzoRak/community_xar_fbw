@@ -1,5 +1,7 @@
 -- NEGATIVES ARE **NOT** SUPPORTED
 
+-- v1.1
+
 -- key
 -- number = slog (condition)
 -- n = n-1 (n < 1)
@@ -10,12 +12,19 @@
 -- eAeB = 2+log(B+log(A)) (1 < B and B < 10)
 -- 10^^n = n (true)
 
+-- examples
+-- p.tetr(log(3),log(3)) -> 3^^3
+-- p.pow(1,1+log(2)) -> 10^100
+
 local epsilon = 1e-9
 
 local log,floor = math.log10,math.floor
 
+function math.round(v)
+    return floor(v+0.5)
+end
 local function digits(n, d)
-    return floor((n+epsilon)*10^d)/10^d
+    return math.round((n+epsilon)*10^d)/10^d
 end
 local function abb(l, d)
     local abbs = {"K","M","B","T","Qd","Qn","Sx","Sp","Oc","De"}
@@ -49,7 +58,7 @@ function p.tostring(slog)
     if slog < 1e6 then
         return 10^(slog%1) .. "F" .. floor(slog)
     end
-    return "F" .. abb(slog, 2)
+    return "F" .. abb(log(slog), 2)
 end
 
 function p.add(a, b)
@@ -105,7 +114,7 @@ function p.sub(a, b)
     -- this approach is stupid!
     local guesser = -1
     local adder = 4
-    for i = 1,30 do
+    for i = 1,55 do
         adder = adder/2
         guesser = guesser + adder
         if p.add(b, guesser) > a then guesser = guesser - adder end
@@ -141,6 +150,11 @@ end
 function p.div(a, b)
     if floor(a) > 3 then return b>a and -1 or a end
     if b > 0 then
+        if a < 0 then
+            if b < 1 then return (a+1)/10^b-1 end
+            if b < 2 then return (a+1)/10^10^(b-1)-1 end
+            return (a+1)/10^10^10^(b-2)-1
+        end
         if b > a then
             local out = p.sub(b-1,a-1)+1
             if out < 1 then return 1/10^out-1 end
@@ -159,7 +173,8 @@ function p.div(a, b)
         end
         return p.add(a-1,r-1)+1
     end
-    local r = log((a+1)/(b+1)-1)
+    -- for some reason there was a log() here
+    local r = (a+1)/(b+1)-1
     if r > 0 then
         r = log(r+1)
     end
@@ -170,6 +185,15 @@ function p.div(a, b)
         r = 2 + log(r-1)
     end
     return r
+end
+
+function p.floor(slog)
+    if slog > 1+log(15) then return slog end
+    return p.fromnumber(math.floor(p.tonumber(slog)))
+end
+
+function p.mod(a, b)
+    return p.sub(a, p.mul(p.floor(p.div(a, b)), b))
 end
 
 function p.pow(a, b)
