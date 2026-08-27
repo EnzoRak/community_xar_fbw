@@ -8,9 +8,9 @@ function p.__on_start(wid)
     p.check_trophies()
 end
 
--- add_bent_s(7,7,14,"bent_cxar_trophy","example")
+-- add_bent_s(7,7,14,"bent_cxar_trophy","example_id")
 p.trophies = {};p.trophies_name = {} -- order CANNOT change
-local function add(a,b)p.trophies[#p.trophies+1] = a;p.trophies_name[#p.trophies]=b end
+local function add(id,name)p.trophies[#p.trophies+1] = id;p.trophies_name[#p.trophies]=name end
 add("ywk", "Ying World Purple Cube")
 add("inf_data", "Infinity Database")
 add("alpha_flower", "Alphabet Flower")
@@ -20,6 +20,7 @@ add("pink_flower", "Pink Flower")
 add("glc", "Good Luck Cube")
 add("sunflower", "Sunflower")
 add("sunflower2", "Sunflower Ritual")
+-- add more trophies here at the end!!!
 
 p.map = {} -- performance reasons.
 for i = 1,#p.trophies do p.map[p.trophies[i]] = i end
@@ -28,6 +29,11 @@ local num_trophies = 0
 local trophies_unlocked = {}
 
 local scroll = 0
+
+function p.fix()
+    local str = ga_get_s("community_xar_fbw.trophies")
+    if #str < #p.trophies then ga_set_s("community_xar_fbw.trophies", str .. ("0"):rep(#p.trophies - #str)) end
+end
 
 function p.check_trophies()
     num_trophies = 0
