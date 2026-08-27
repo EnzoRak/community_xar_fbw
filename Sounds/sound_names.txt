@@ -2,3 +2,6 @@
 die_chewing_gum             chewinggumdie.mp3
 hit_chewing_gum             chewinggumhit.mp3
 
+die_flowery          Die/die_flowery.ogg
+hurt_flowery          Hurt/hurt_flowery.ogg
+
