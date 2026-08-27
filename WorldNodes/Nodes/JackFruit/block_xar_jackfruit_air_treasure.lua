@@ -1,0 +1,110 @@
+function p.__get_is_solid()
+    return false
+end
+
+function p.__get_tex()
+    return ""
+end
+
+function p.__main()
+    set_default_block("XAR_JACKFRUIT_AIR")
+
+    --Generating the chunk as if
+    --it was of type XAR_SMALL_YELLOW_FLOWER.
+
+    --Replacing the yellow block in the yellow flower
+    --with a meme block.
+    local upgs = {
+        --"gun_0_ammo_cap",
+        --"gun_0_damage",
+        --"gun_0_proj_speed",
+        --"gun_1_ammo_cap",
+        --"gun_1_ammo_regen",
+        --"gun_1_damage",
+        --"gun_1_fire_speed",
+        --"gun_1_proj_speed",
+        --"gun_2_ammo_cap",
+        --"gun_2_damage",
+        --"gun_2_fire_speed",
+        --"gun_2_num_shots",
+        --"gun_2_proj_speed",
+        --"gun_3_ammo_cap",
+        --"gun_3_damage",
+        --"gun_3_time",
+        --"gun_4_ammo_cap",
+        --"gun_4_damage",
+        --"gun_4_fire_speed",
+        --"gun_4_proj_speed",
+        --"gun_4_radius",
+        --"gun_5_ammo_cap",
+        --"gun_5_damage",
+        --"gun_5_fire_speed",
+        --"gun_5_proj_speed",
+        --"gun_6_ammo_cap",
+        --"gun_6_damage",
+        --"gun_6_fire_speed",
+        --"gun_6_proj_speed",
+        --"gun_7_ammo_cap",
+        --"gun_7_damage",
+        --"gun_7_fire_speed",
+        --"gun_8_ammo_cap",
+        --"gun_8_damage",
+        --"gun_8_radius",
+        --"gun_8_time",
+        --"gun_9_ammo_cap",
+        --"gun_9_damage",
+        --"gun_9_proj_speed",
+        --"gun_9_radius",
+        "health_cap",
+        "health_regen",
+        --"shield"
+    }
+	if randi(1,16) == 1 then
+		add_bent(8,8,8,"bent_upgrade_" .. upgs[randi(1,#upgs)])
+	elseif randi(1,2056) == 1 then
+		add_bent(8,8,8,"bent_ammo_gun_8")
+	elseif randi(1,36) == 1 then
+		for jackfruitEnemies = 0,8 do
+			if randi(1,16) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_guardian")
+			end
+			if randi(1,64) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_lamprey_green")
+			end
+			if randi(1,64) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_flowery")
+			end
+			if randi(1,16) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_ogre")
+			end
+			if randi(1,4) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_vulcan_war_iron")
+			end
+			if randi(1,32) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_collapsed_soul")
+			end
+		end
+	elseif randi(1,1600) == 1 then
+		add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_clockwork_watchman")
+		for jackfruitBossMinions = 0,16 do
+			if randi(1,16) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_guardian")
+			end
+			if randi(1,64) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_lamprey_green")
+			end
+			if randi(1,8) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_hobgoblin")
+			end
+			if randi(1,16) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_ogre")
+			end
+			if randi(1,4) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_marine_hit_man")
+			end
+			if randi(1,32) == 1 then
+				add_ment(randi(0,15),randi(0,15),randi(0,15),"ment_monster_collapsed_soul")
+			end
+		end
+	end
+end

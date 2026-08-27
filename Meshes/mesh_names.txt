@@ -19,3 +19,10 @@ ment_evaluator block_yellow_black_striped large_box.obj
 ment_dream_core sleep sphere.obj
 
 bent_upgrade_pack upgrade_pack large_box.obj
+
+#Monsters
+
+MonsterFlowery                  MonsterFlowery                  sphere.obj
+MonsterMajorGuard                  MonsterMajorGuard                  sphere.obj
+MonsterTrueGuardian                  MonsterTrueGuardian                  sphere.obj
+MonsterOverclockedWatchman                  MonsterOverclockedWatchman                  sphere.obj

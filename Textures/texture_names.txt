@@ -8,3 +8,10 @@ bent_magician _ RWS_Tarot_01_Magician.jpg
 code _ ent_code.png
 upgrade_pack _ upgrade_pack.png
 block_glitch _ glitch.png
+
+#Monsters
+
+MonsterFlowery _ MEnts/Monster/Flowery/monster_flowery.jpg
+MonsterMajorGuard _ MEnts/Monster/Guardian/monster_majorguard.jpg
+MonsterTrueGuardian _ MEnts/Monster/Guardian/monster_true_guardian.jpg
+MonsterOverclockedWatchman _ MEnts/Monster/Other/monster_overclocked_watchman.jpg
