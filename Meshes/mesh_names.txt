@@ -20,9 +20,34 @@ ment_dream_core sleep sphere.obj
 
 bent_upgrade_pack upgrade_pack large_box.obj
 
+#Stores
+
+bent_buy_dark_hole_50               buy_dark_hole_50                   large_box.obj
+
 #Monsters
 
 MonsterFlowery                  MonsterFlowery                  sphere.obj
 MonsterMajorGuard                  MonsterMajorGuard                  sphere.obj
 MonsterTrueGuardian                  MonsterTrueGuardian                  sphere.obj
 MonsterOverclockedWatchman                  MonsterOverclockedWatchman                  sphere.obj
+MonsterMechanizedStar                  MonsterMechanizedStar                  sphere.obj
+
+MonsterSingularityRingLarge      black          ring_large.obj
+MonsterSingularityRingMed        black          ring_med.obj
+MonsterSingularityRingSmall      black          ring_small.obj
+
+MonsterUnstableEnergyRingLarge      green          ring_large.obj
+MonsterUnstableEnergyRingMed        green          ring_med.obj
+MonsterUnstableEnergyRingSmall      green          ring_small.obj
+
+MonsterUnstableAtomRingLarge      blue          ring_large.obj
+MonsterUnstableAtomRingMed        red          ring_med.obj
+MonsterUnstableAtomRingSmall      green          ring_small.obj
+
+MonsterUnstableLightRingLarge      red          ring_large.obj
+MonsterUnstableLightRingMed        red          ring_med.obj
+MonsterUnstableLightRingSmall      red          ring_small.obj
+
+MonsterUnstableWaveformRingLarge      blue          ring_large.obj
+MonsterUnstableWaveformRingMed        blue          ring_med.obj
+MonsterUnstableWaveformRingSmall      blue          ring_small.obj

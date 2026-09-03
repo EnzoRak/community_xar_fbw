@@ -81,7 +81,7 @@ function p.__main()
 		add_bent(14,8,z,"bent_ammo_gun_7_large_once")
 	end
 	add_bent_s(7,7,7,"bent_base_txt","Welcome to the Lime Checkpoint!\n\nIf you keep going to the center, there willl be an even bigger fight, with more Minigun Upgrades!")
-	add_bent_s(7,7,11,"bent_base_txt","You got the Lime Midpoint Trophy!\n\nWell, there isn't actually a trophy here, but it's fun to play make believe.")
+    add_bent_s(7,7,11,"bent_cxar_trophy","lime1")
 	add_bent(7,7,13, "bent_armor_600p_once")
 	add_bent(7,7,5, "bent_gold_once_10")
     add_bent_s(7,7,9,"bent_base_waypoint","Minigun Flower Checkpoint")

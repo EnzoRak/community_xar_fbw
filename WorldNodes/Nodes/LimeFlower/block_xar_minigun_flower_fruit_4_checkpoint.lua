@@ -81,7 +81,6 @@ function p.__main()
 		add_bent(14,8,z,"bent_ammo_gun_7_large_once")
 	end
 	add_bent_s(7,7,7,"bent_base_txt","Welcome to the Lime Core Checkpoint!\n\nThere are no upgrades here. Continue towards the center for your treasure!\n\nThe Lime's treasure lies within it's ^xFFFFFFWHITE^! core, and within that core will be a treasure chunk at it's center.\n\n^xff0000Beware, unless you are seeking for hardship, do not stay in the open.^!")
-	add_bent_s(7,7,11,"bent_base_txt","You got the Lime Core Checkpoint Trophy!\n\nWell, there isn't actually a trophy here, but it's fun to play make believe.")
 	add_bent(7,7,13, "bent_armor_600p_once")
 	add_bent(7,7,5, "bent_gold_once_10")
     add_bent_s(7,7,9,"bent_base_waypoint","Minigun Flower Fruit Checkpoint")

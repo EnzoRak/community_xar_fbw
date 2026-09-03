@@ -26,7 +26,7 @@ function p.__main()
 	add_bent(2,13,13,"bent_base_ring_pink_source")
 	add_bent_s(13,13,13,"bent_base_txt","^x00ff00Did you have fun? Going back to the simpler times when you only had a Plasma weapon.\n\nWell, it probably didn't take you very long to get back your Cannon, then Laser, etc. Still, it's nice to look back.\n\nAnd see, how far we have come.^!")
 	add_bent_s(2,13,11,"bent_base_txt","These ^xff00ffPink Rings^! will bring you to the outside of this Rocket Showdown Cave.")
-	add_bent_s(13,13,11,"bent_base_txt","You got the Rocket Cave Trophy!\n\nWell, there isn't actually a trophy here, but it's fun to play make believe.")
+	add_bent_s(13,13,11,"bent_cxar_trophy","rocketshowdowncave")
 	for x = 11,13,2 do
 	for y = 11,13,2 do
 	for z = 3,9,2 do

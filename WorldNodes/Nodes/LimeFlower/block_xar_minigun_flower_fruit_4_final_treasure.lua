@@ -87,7 +87,7 @@ function p.__main()
 		add_bent(14,12,z,"bent_ammo_gun_9_once")
 	end
 	add_bent_s(1,14,6,"bent_base_txt","^x00ff00Message from your friend K:\n\nI've never seen this Lime in my journey inside the Fractal Block World. Looking back, perhaps I simply missed this obvious Lime? The Fractal Block World is so big and vast, I wouldn't be surprised if my memory was hazy. I don't remember the first time I did a Noob Maze!\n\nWell, you could also say I just wasn't paying attention.\n\nAfter all, if you don't know what you're looking for, you won't know what to search for.\n\nGosh, why am I being so philosophical right now?!^!")
-	add_bent_s(1,14,10,"bent_base_txt","You got the Lime Trophy!\n\nWell, there isn't actually a trophy here, but it's fun to play make believe.")
+    add_bent_s(1,14,10,"bent_cxar_trophy","lime2")
 	add_bent(1,14,12, "bent_armor_600p_once")
 	add_bent(1,14,4, "bent_gold_once_1000")
     add_bent_s(1,14,8,"bent_base_waypoint","Lime Finish!!!")
