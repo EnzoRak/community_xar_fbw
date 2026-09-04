@@ -9,33 +9,13 @@ function p.__get_use_msg(level, bp)
     return "Use to Evaluate code"
 end
 
-local function safe_eval(expr, level, bp)
-    local env = {
-        math = { abs = math.abs, floor = math.floor, ceil = math.ceil },
-        string = { len = string.len, sub = string.sub },
+local function safe_eval(expr,l,b)
+    -- the env is no more
 
-        level = level,
-        bp = bp,
-
-        -- engine tables/functions
-        game_upgrades = game_upgrades,
-        game_bent = game_bent,
-        ga_play_sound = ga_play_sound,
-        ga_play_sound_menu = ga_play_sound_menu,
-        ga_console_print = ga_console_print,
-        ga_print = ga_print,
-        ga_tele = ga_tele,
-        ga_get_viewer_path = ga_get_viewer_path,
-        std = std,
-
-        -- make 'p' table itself visible
-        p = p,
-    }
-
-    local chunk, err = load(expr, "user_chunk", "t", env)
+    local chunk, err = load("local level,bp = ...;" .. expr)
     if not chunk then return nil, err end
 
-    local ok, result = pcall(chunk)
+    local ok, result = pcall(chunk, l, b)
     if not ok then
         return nil, result
     end

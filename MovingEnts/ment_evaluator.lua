@@ -20,29 +20,9 @@ end
 
 
 local function safe_eval(expr,id)
-    local env = {
-        math = { abs = math.abs, floor = math.floor, ceil = math.ceil },
-        string = { len = string.len, sub = string.sub },
+    -- the env is no more
 
-        id = id,
-        elapsed_time = elapsed_time,
-        elapsed_level_time = elapsed_level_time,
-
-        -- engine tables/functions
-        game_upgrades = game_upgrades,
-        game_bent = game_bent,
-        ga_play_sound = ga_play_sound,
-        ga_play_sound_menu = ga_play_sound_menu,
-        ga_console_print = ga_console_print,
-        ga_print = ga_print,
-        ga_get_b = ga_get_b,
-        ga_window_push = ga_window_push,
-
-        -- make 'p' table itself visible
-        p = p,
-    }
-
-    local chunk, err = load(expr, "user_chunk", "t", env)
+    local chunk, err = load(expr)
     if not chunk then return nil, err end
 
     local ok, result = pcall(chunk)
