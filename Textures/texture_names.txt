@@ -11,7 +11,7 @@ block_glitch _ glitch.png
 
 #Stores
 
-buy_dark_hole_50 _ BEnts/buy_dark_hole_50.jpg
+buy_dark_hole _ BEnts/buy_dark_hole.jpg
 
 
 #Monsters

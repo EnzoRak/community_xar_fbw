@@ -22,7 +22,9 @@ bent_upgrade_pack upgrade_pack large_box.obj
 
 #Stores
 
-bent_buy_dark_hole_50               buy_dark_hole_50                   large_box.obj
+bent_buy_dark_hole_50               buy_dark_hole                  large_box.obj
+bent_buy_dark_hole_100              buy_dark_hole                  large_box.obj
+bent_buy_dark_hole_200              buy_dark_hole                   large_box.obj
 
 #Monsters
 
