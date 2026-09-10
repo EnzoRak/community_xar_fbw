@@ -19,6 +19,25 @@ function p.dist_sq(v1, v2)
     return x*x + y*y + z*z
 end
 
+
+function p.dist_sq_2d_no_X(v1, v2)
+    local y = v1.y - v2.y
+	local z = v1.z - v2.z
+    return y*y + z*z
+end
+
+function p.dist_sq_2d_no_Y(v1, v2)
+    local x = v1.x - v2.x
+	local z = v1.z - v2.z
+    return x*x + z*z
+end
+
+function p.dist_sq_2d_no_Z(v1, v2)
+    local x = v1.x - v2.x
+    local y = v1.y - v2.y
+    return x*x + y*y
+end
+
 --Box interpolating.
 --If frac == (0,0,0), it will return v1.
 --If frac == (1,1,1), it will return v2.

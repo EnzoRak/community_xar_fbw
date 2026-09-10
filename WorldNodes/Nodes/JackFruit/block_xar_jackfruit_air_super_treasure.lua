@@ -74,7 +74,7 @@ function p.__main()
 	end end
 	add_bent_s(7,7,7,"bent_base_txt","Welcome to the Jackfruit Checkpoint!\n\nHave some free Nukes for your troubles!")
 	add_bent_s(7,7,9,"bent_base_txt","^x00ff00Message from your friend K:\n\nI've modified Jackfruits to make them contain more Health Upgrades, and even RejuvenX in these treasure chunks! However, it seem's like it also attracted many nasty monsters! I'm sure you have a strong EMP weapon to boot.\n\nYou may have noticed these so called Flowery monsters. They CANNOT be stunned by EMP. And they will SWARM you and they are near impossible to wipe out. They only way to not get killed by them is to RUN AWAY.\n\nIf you don't know already, you can use Laser Disco to kill a weaker monster to freeze a room of Floweries.^!")
-	add_bent_s(7,7,11,"bent_base_txt","You got the Jackfruit Checkpoint Trophy!\n\nWell, there isn't actually a trophy here, but it's fun to play make believe.")
+    add_bent_s(7,7,11,"bent_cxar_trophy","jackfruit")
 	add_bent(7,7,13, "bent_armor_600p_once")
 	add_bent(9,7,13, "bent_health_mega_once")
 	add_bent(7,9,13, "bent_health_mega_once")

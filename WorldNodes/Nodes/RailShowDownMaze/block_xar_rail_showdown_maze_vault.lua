@@ -80,7 +80,7 @@ function p.__main()
 		add_bent(x,y,z,"bent_ammo_gun_7_large")
 	end end end
 	add_bent_s(2,13,6,"bent_base_txt","^x00ff00Message from your friend K:\n\nWhen a simple maze cotnains enemies, ones ability to navigate it significantly decreases.\n\nThese peons take away your attention, and your focus will stray away from what's actually important. Sometimes its simply not worth to fight.\n\nTake Unstable Waveform for an example. They're slow, and only damage you when in close contact. You're simply better off freezing them and running away. Sometimes.^!")
-	add_bent_s(2,13,10,"bent_base_txt","You got the Rail Rift Trophy!\n\nWell, there isn't actually a trophy here, but it's fun to play make believe.")
+    add_bent_s(2,13,10,"bent_cxar_trophy","railshowdownmaze")
 	add_bent(2,13,12, "bent_armor_1000p_once")
 	add_bent(2,13,8, "bent_gold_once_1000")
 	add_bent(2,13,4, "bent_ammo_gun_0")

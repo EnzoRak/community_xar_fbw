@@ -20,6 +20,14 @@ add("pink_flower", "Pink Flower")
 add("glc", "Good Luck Cube")
 add("sunflower", "Sunflower")
 add("sunflower2", "Sunflower Ritual")
+add("jackfruit", "Jackfruit Checkpoint")
+add("lime1", "Lime Checkpoint")
+add("lime2", "Lime")
+add("railshowdownmaze", "Rail Showdown Maze")
+add("rocketshowdowncave", "Rocket Showdown Cave")
+add("wrf", "Weapons Research Facility")
+add("wrfsecret1", "Weapons Research Facility Pink Secret")
+add("wrfsecret2", "Weapons Research Facility Maze Secret")
 -- add more trophies here at the end!!!
 
 p.map = {} -- performance reasons.
