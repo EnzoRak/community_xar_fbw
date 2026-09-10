@@ -4,12 +4,13 @@
 
 -- key
 -- number = slog (condition)
--- n = n-1 (n < 1)
--- n = log(n) (n < 10)
--- 10^n = 1+log(n) (1 < n and n < 10)
--- AeB = 1+log(B+log(A)) (1 < B and B < 10)
--- 10^10^n = 2+log(n) (1 < n and n < 10)
--- eAeB = 2+log(B+log(A)) (1 < B and B < 10)
+-- n = n-1 (n <= 1)
+-- n = log(n) (n <= 10)
+-- 10^n = 1+log(n) (1 <= n <= 10)
+-- AeB = 1+log(B+log(A)) (1 <= B <= 10)
+-- AeB = 2+log(log(B+log(A))) (10 <= B <= 1e10)
+-- 10^10^n = 2+log(n) (1 <= n <= 10)
+-- eAeB = 2+log(B+log(A)) (1 <= B <= 10)
 -- 10^^n = n (true)
 
 -- examples

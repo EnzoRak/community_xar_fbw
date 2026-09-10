@@ -4,6 +4,7 @@ end
 
 function p.payload(level, bp)
     local name = ga_bent_get_param_s(level, bp)
+    win_cxar_trophies.fix()
     local str = ga_get_s("community_xar_fbw.trophies")
     local pos = win_cxar_trophies.map[name]
     if pos == nil then
