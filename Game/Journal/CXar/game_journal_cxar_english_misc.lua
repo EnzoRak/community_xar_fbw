@@ -37,7 +37,7 @@ function p.not_recordable()
     game_journal.add_txt(lang, "mcl12_containment_base", "This is the ^x00ff00Mylantis Cave Layer 12 Containment Base^!. We have tried to make it as similar to simulations of MCL12. Note that some places may be innacurate or ^xff00ffunstable^!. We tried our best to make a reward for escaping MCL12. This blue ring device will take you to the center of this sample of MCL12. You will be shrunk so that the sample will be 1 megachunk big. And yes, there are anti-plugs, we don't like cheesing...\n\n^xff0000BEWARE: There are a lot of rats that have evolved to fight off most creatures.^!")
     game_journal.add_txt(lang, "mcl12_treasure", "^x00ff00Congratulations!!^!\n\nYou made it out of the sample of MCL12! Here's our reward. Now all yours.")
 
-    game_journal.add_txt(lang, "community_challenges_intro", "Welcome to the community challenges!\n\n^x00FF00List of Challenges:^!\n\n1. ^xFF00FFPink Key^! Challenge\n2. ^xFF0000R^!^x00FF00i^!^x0000FFn^!^xFF00FFg^! Maze (Incomplete)\n3. Pool Balls Challenge\n4. 7x7x7x7 4 Dimensional Maze\n5. Ascend ^xFFFF00Yellow Rings ^!Challenge")
+    game_journal.add_txt(lang, "community_challenges_intro", "Welcome to the community challenges!\n\n^x00FF00List of Challenges:^!\n\n1. ^xFF00FFPink Key^! Challenge\n2. ^xFF0000R^!^x00FF00i^!^x0000FFn^!^xFF00FFg^! Maze (Incomplete)\n3. Pool Balls Challenge\n4. 7x7x7x7 4 Dimensional Maze\n5. Ascend ^xFFFF00Yellow Rings ^!Challenge\n6. ^xff0000S^xffff00T^x00ff00U^x00ffffP^x0000ffI^xff00ffD^! CHALLENGE")
 
     game_journal.add_txt(lang, "pk_challenge_1", "Part 1: The 6 Keys\n\nYou will need the following keys: ^xA2EAFFLaser Genesis Key^!, ^x0000E0Blue Key^!, ^xFFF000Yellow Key^!, ^xFFFFFFKey To the Universe^!, ^xE42A26Farmhouse Key^!, and a specific ^x2BE404Green Key^!\n\nThe ^x2BE404Green Key^! is specifically the one with combination ^x2BE404wig_flower_stem_1^!\n\nRemember, obtaining the ^xA2EAFFLaser Genesis Key^! will also wipe your ammo.")
     game_journal.add_txt(lang, "pk_thehardest_1", "Part 2: ^xFF00FFThe Hidden Pink Ring^!\n\nI hope you know which areas lead to more areas without Pink Spheres in the Ying Forest.\n\nOnce you shrink down, the only way to come back to this size is to use a ^x0000FFBlue Ring.^! \n\nThe only way to progress it to find a ^xFF00FFPink Ring^! somewhere that will take you out of the Ying Forest.")
@@ -50,6 +50,11 @@ function p.not_recordable()
     game_journal.add_txt(lang, "pc_treasure", "Note: You should set a waypoint somewhere in I3 with easy access to a Pink Ring in case you decide to come back for ^xFF00FFthe secret on the floor.^!")
 
     game_journal.add_txt(lang, "7777_maze_container", "^xFF00FFThe 7x7x7x7 Hypermaze.^!\n\nThe way I am designing this should make this the hardest maze in the game.")
+
+    game_journal.add_txt(lang, "stupid", "THISI S THE ^xff0000S^xffff00T^x00ff00U^x00ffffP^x0000ffI^xff00ffD^! CHALLENGE BY ^xffffffWK^!!!!!\n\nthe goal is to get from the shrink ring to the yellow block\ncome on, it can't be that bad, can it? ^x0f0000OH GOD NO.^!")
+    game_journal.add_txt(lang, "stupid_enter", "oh, yeah, i forgot to tell you about that......\n\nit's a maze of antiplugs. don't worry, there's no enemies :D")
+    game_journal.add_txt(lang, "stupid_cheese", "no, you cannot cheese it, silly :3") -- rare footage of wk using :3
+    game_journal.add_txt(lang, "stupid_treasure", "you thought this was the end huh?\n\nno. it gets.")
 end
 function p.alphabet_flower_info(chunk_id)
     local id = ga_chunk_id_to_parent_chunk_id(chunk_id)

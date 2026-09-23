@@ -42,11 +42,13 @@ function p.__main()
     set_pos(14,12,14, "XAR_EMPTY_BORING")
     set_pos(14,13,14, "XAR_EMPTY_BORING")
     set_pos(13,13,14, "trials_chal")
+
+    set_pos(14,14,14, "XAR_EMPTY_BORING")
+    set_pos(14,15,14, "XAR_EMPTY_BORING")
+    set_pos(13,15,14, "stupid")
+    
     --add your own challenge?
     --[=====[    
-    set_pos(14,13,14, "XAR_EMPTY_BORING")
-    set_pos(14,14,14, "XAR_EMPTY_BORING")
-    
     --oh we going down now? nah back.
     set_pos(14,14,13, "XAR_EMPTY_BORING")
     set_pos(13,14,13, "XAR_EMPTY_BORING")
