@@ -39,6 +39,7 @@ end
 function p.force_init_hud_table()
     p.clear_hud_table()
     --p.add_element(-10, blinker_test.render)
+    p.add_element(0, game_hud_water.render)
 end
 
 -------------------------------------------------

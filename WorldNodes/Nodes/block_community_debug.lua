@@ -25,13 +25,10 @@ function p.__main()
     -- i did the thing
     local blocks = {
         --"community_debug",
-        "galaxy_blackhole",
-        "gl_cube",
         "dirty_air_case",
         "pink_flower",
         "alphabet_flower",
         "sunflower",
-        "ywkey_entrance",
         "sun_microsystem",
         "twoworld_container",
         "truecenter",
@@ -39,9 +36,20 @@ function p.__main()
         "sadlands",
         "mcl12_containment_base",
         "infinity_database_container",
-        {"infx_enter",val=4},
+        --{"infx_enter",val=4},
 
-        "test_time"
+        "test_time",
+        {"big",bt="perlin"},--"perlin_big",
+        {"big",bt="voronoi"},--"voronoi_big",
+        {"big",bt="i3v2_test"},
+        "i3v2_container",
+    }
+    
+    -- for blocks that you cant enter because its being covered up by the ledges.
+    local blocks2 = {
+        "galaxy_blackhole",
+        "gl_cube",
+        "ywkey_entrance",
     }
     
     for j = 1, #blocks do
@@ -54,7 +62,11 @@ function p.__main()
             set_pos(x,y,z,block[1])
             for i,v in pairs(block) do
                 if i ~= 1 then
-                    block_set_i(x,y,z, i, v)
+                    if type(v) == "string" then
+                        block_set_s(x,y,z, i, v)
+                    else
+                        block_set_i(x,y,z, i, v)
+                    end
                 end
             end
         else
@@ -65,5 +77,13 @@ function p.__main()
         end
         --bug fix. Apparently, the sunflower's call to create_xar_chunk("XAR_SMALL_YELLOW_FLOWER") requires there to be a block underneath, in this specific case, for chunk generation. Litterally have no idea why this is the case now. Damn Daniel. An interesting note, the small yellow flower no longer generates the blocks structure, but still generates the air when this happens. However, since the floor has to be a XAR block, I decided XAR_SOLID_BORING was good enough.   
         --set_pos(x,y,z-1,"XAR_SOLID_BORING")
+    end
+    for j = 1, #blocks2 do
+        local i = j-1
+        local block = blocks2[j]
+        local x = 2
+        local y = 3+(i%6)*2
+        local z = 2+(i//6)*2
+        set_pos(x,y,z,block)
     end
 end
