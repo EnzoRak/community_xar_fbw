@@ -25,7 +25,7 @@ function p.transform_xyz(data,x,y,z)
     )
 end
 
-function p.__main()
+function p.__main(entrance_mode)
     --create_xar_chunk("XAR_GROUP_3_MEGA")
     set_default_block("XAR_SOLID_BORING_DARK_GREEN_BORDER")
     create_rect("XAR_SOLID_BORING_BLUE_BORDER",0,0,12,15,15,12)
@@ -35,6 +35,9 @@ function p.__main()
     for x = 0,15 do for y = 0,15 do
         local t1 = p.transform_xy(d,x,y)
         local v = perlin_noise_xy(0, t1.x,t1.y)
+        if entrance_mode then
+            v = v - 1/(((x-7)*(x-7)+(y-7)*(y-7))/2+1)
+        end
         if v > -0.1 then
             set_pos(x, y, 6, "i3v2_ocean_kilo")
         end
