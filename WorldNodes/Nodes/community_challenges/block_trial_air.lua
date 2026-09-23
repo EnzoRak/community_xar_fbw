@@ -27,9 +27,10 @@ p.monsters = { -- weakest at the top, strongest at the bottom!
     "ment_monster_goon_unsavory",    -- 30  dps (300d/10s) 50k  hp
     "ment_monster_troll",            -- 40  dps (200d/5s)  50k  hp
     "ment_monster_goon_evil",        -- 40  dps (400d/10s) 100k hp
-    "ment_monster_marine_mercinary", -- 40  dps (40d/1s)   500k hp
+    "ment_monster_marine_mercenary", -- 40  dps (40d/1s)   500k hp
     "ment_monster_goon_despicable",  -- 50  dps (500d/10s) 200k hp
     "ment_monster_marine_commando",  -- 50  dps (50d/1s)   1M   hp
+    "ment_monster_hobgoblin",        -- 60  dps (300d/5s)  200k hp
     "ment_monster_ogre",             -- 80  dps (400d/5s)  500k hp
     "ment_monster_rat_minor",        -- 100 dps (100d/1s)  10k  hp
     "ment_monster_goon_ultimate",    -- 100 dps (1kd/10s)  1M   hp

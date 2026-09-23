@@ -47,11 +47,17 @@ function p.__main()
     set_pos(14,15,14, "XAR_EMPTY_BORING")
     set_pos(13,15,14, "stupid")
     
+    set_pos(14,15,13, "XAR_EMPTY_BORING")
+    set_pos(14,15,12, "XAR_EMPTY_BORING")
+    set_pos(13,15,12, "gigachunk_battleshaft_chal")
+
+    --set_pos(14,14,12, "XAR_EMPTY_BORING")
+    --set_pos(14,13,12, "XAR_EMPTY_BORING")
+    --set_pos(13,13,12, "challenge block type")
+
     --add your own challenge?
     --[=====[    
     --oh we going down now? nah back.
-    set_pos(14,14,13, "XAR_EMPTY_BORING")
-    set_pos(13,14,13, "XAR_EMPTY_BORING")
     --]=====]
 
 end

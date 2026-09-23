@@ -64,6 +64,7 @@ function p.__render(wid)
     ga_win_quad_color(wid, 0, 0, 1, 0.02, std.vec(0,0,0))
     ga_win_quad_color(wid, 0, 0, frac, 0.02, std.vec(0,1,0))
     local hover = ""
+    local hover_italic = true
     -- todo add icon support
     for i = 1,#p.trophies do
         local x = ((i-1)%5)*0.2+0.1
@@ -73,7 +74,11 @@ function p.__render(wid)
             hover = trophies_unlocked[i] and p.trophies_name[i] or "???"
         end
     end
-    ga_win_txt(wid, c.x, c.y, hover)
+    if hover_italic then
+        advanced_render.txt_italic(wid, c.x, c.y, hover)
+    else
+        ga_win_txt(wid, c.x, c.y, hover)
+    end
 end
 
 function p.__process_input(wid)

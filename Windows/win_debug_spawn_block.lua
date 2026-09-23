@@ -1,5 +1,5 @@
 function p.__on_start(wid)
-    ga_win_widget_mutable_text_box_start(wid, 0.4, 0.6, 0.45, 0.55, 0.01, 0.02, std.vec(0.5,0.5,0), "")
+    ga_win_widget_mutable_text_box_start(wid, 0.2, 0.8, 0.4, 0.6, 0.01, 0.02, std.vec(1,1,1), "")
 end
 function p.__on_end(wid)
     ga_win_widget_mutable_text_box_end(wid)

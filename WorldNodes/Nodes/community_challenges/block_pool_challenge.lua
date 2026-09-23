@@ -49,14 +49,16 @@ function p.__main()
         end
         --this line probably doesn't matter because the won't be any other blue rings in here. 
         base_blue_tele.set_blue_type_down(15,15,15)
-        create_rect("block_pool_challenge",0,0,0,15,15,15)
+        --create_rect("block_pool_challenge",0,0,0,15,15,15)
+        set_default_block("pool_challenge")
         return;
     end
     --add_bent_s(7,7,10,"bent_base_txt","Use the blue ring to take you to the entrance room to the Pool Balls Challenge. \n\nThe treasure will be in the direct opposite corner of this massive Megachunk, where that Pink Sphere is currently.\n\n^xFF0000Note: You will lose all your ammo when you enter, but there is some EMP ammo and Dark Hole recharges at the start. \n\nI recommend having more than 120 EMP Max Ammo for this and Black Hole Drive unlocked. ^!\n\n^xFFFF00 Oh, and also you need a Yellow Key to enter the treasure room.^!")
     cxar.add_txt(7,7,10,"pool_challenge")
     add_bent(7,7,6,"bent_base_ring_blue")
     add_bent(0,0,0,"bent_base_ring_pink_dest")
-    create_rect("block_pool_challenge",0,0,0,15,15,15)
+    --create_rect("block_pool_challenge",0,0,0,15,15,15)
+    set_default_block("pool_challenge")
     set_pos(0,0,0,"block_pc_treasure")
     base_blue_tele.set_blue_type_down(15,15,15)
 end
