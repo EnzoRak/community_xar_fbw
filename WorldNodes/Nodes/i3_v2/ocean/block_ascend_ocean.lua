@@ -9,5 +9,4 @@ p.water = true
 function p.__main()
     set_default_block("i3v2_ocean")
     add_bent(7,7,7,"bent_base_ring_red")
-    -- put aquatic content here!
 end
