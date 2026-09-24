@@ -1,6 +1,7 @@
 function p.__get_is_solid() return false end
 function p.__get_tex() return "" end
 
+-- number of monsters here: 42
 p.monsters = { -- weakest at the top, strongest at the bottom!
                -- note that the hp and dps are uncurved
     "ment_monster_goblin",           -- 1   dps (5d/5s)    32   hp
@@ -31,6 +32,7 @@ p.monsters = { -- weakest at the top, strongest at the bottom!
     "ment_monster_goon_despicable",  -- 50  dps (500d/10s) 200k hp
     "ment_monster_marine_commando",  -- 50  dps (50d/1s)   1M   hp
     "ment_monster_hobgoblin",        -- 60  dps (300d/5s)  200k hp
+    "ment_monster_goon_maniacal",    -- 75  dps (850d/10s) 500k hp
     "ment_monster_ogre",             -- 80  dps (400d/5s)  500k hp
     "ment_monster_rat_minor",        -- 100 dps (100d/1s)  10k  hp
     "ment_monster_goon_ultimate",    -- 100 dps (1kd/10s)  1M   hp

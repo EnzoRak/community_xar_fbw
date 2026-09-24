@@ -33,16 +33,19 @@ function p.__main()
         "twoworld_container",
         "truecenter",
         "dreamworld",
-        "sadlands",
         "mcl12_containment_base",
         "infinity_database_container",
         --{"infx_enter",val=4},
+        "i3v2_container",
+        "xar_weapons_research_facility",
+        "xar_rail_showdown_rift",
+        "xar_rocket_cave_redux",
 
         "test_time",
         {"big",bt="perlin"},--"perlin_big",
         {"big",bt="voronoi"},--"voronoi_big",
         {"big",bt="i3v2_test"},
-        "i3v2_container",
+        "xar_testing_hell",
     }
     
     -- for blocks that you cant enter because its being covered up by the ledges.
@@ -50,6 +53,8 @@ function p.__main()
         "galaxy_blackhole",
         "gl_cube",
         "ywkey_entrance",
+        "sadlands",
+        "XAR_DEBUG_SECRET_COLUMN_1",
     }
     
     for j = 1, #blocks do
